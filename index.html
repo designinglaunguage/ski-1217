@@ -126,6 +126,12 @@ nav.toc a.cur b{color:var(--accent,#c2410c);text-decoration:underline;text-under
 }
 .bcw{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0 6px}.bcw figure{margin:0}.bcw img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid #ddd}.bcw figcaption{font-size:14px;padding-top:5px;display:flex;gap:7px;align-items:baseline}.bcw figcaption b{flex:none;background:#0f2a4a;color:#fff;width:22px;height:22px;display:grid;place-items:center;font-size:13px}
 @media (max-width:720px){.bcw{grid-template-columns:1fr 1fr}}
+details.fold.big{border:2px solid #0f2a4a;background:#f3f6fa;margin:14px 0}details.fold.big>summary{list-style:none;display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:14px 16px;color:#0f2a4a}details.fold.big>summary::-webkit-details-marker{display:none}details.fold.big>summary span{font-size:17px}details.fold.big>summary small{grid-column:1;font-weight:400;color:#55657a;font-size:14px}details.fold.big>summary i{grid-row:1/3;grid-column:2;align-self:center;font-style:normal;background:#0f2a4a;color:#fff;padding:9px 14px;font-size:14px}details.fold.big[open]>summary i{background:#55657a}details.fold.big[open]>summary i::after{content:" ▲"}details.fold.big>summary i::after{content:" ▼"}details.fold.big>div,details.fold.big>figure,details.fold.big>p{margin-left:12px;margin-right:12px}
+.clock{margin:8px 0 18px}.clock .ax{position:relative;height:20px;margin-left:130px;font-size:13px;color:#55657a}.clock .ax span{position:absolute;transform:translateX(-50%)}.clock .row{display:grid;grid-template-columns:130px 1fr;align-items:center;margin:6px 0}.clock .row b{font-size:14px}.clock .tr{position:relative;height:34px;background:repeating-linear-gradient(90deg,#eee 0 1px,transparent 1px 20%)}.clock .bar{position:absolute;top:0;bottom:0;display:flex;align-items:center;padding:0 8px;font-style:normal;color:#fff;font-size:13px;white-space:nowrap;overflow:hidden}.bar.o{background:#c2410c}.bar.g{background:#15803d}
+.hcard{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0}.hcard>div{border:1px solid #cbd5e1;padding:12px 14px}.hcard>div.hi{border:2px solid #0f2a4a}.hcard b{font-size:16px;display:block}.hcard .pr{font-size:22px;font-weight:800;display:block;margin:2px 0 6px}.hcard ul{margin:0;padding-left:18px;font-size:14px}
+.floors{margin:10px 0}.fl{display:grid;grid-template-columns:56px 1fr;border:1px solid #cbd5e1}.fn{background:#0f2a4a;color:#fff;font-weight:800;font-size:20px;display:grid;place-items:center}.fl ol{list-style:none;margin:0;padding:0}.fl li{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:10px;border-bottom:1px solid #e5e7eb;align-items:center}.fl li:last-child{border-bottom:0}.fl li img{width:110px;height:82px;object-fit:cover;display:block}.fl li b{display:block;font-size:16px}.fl li div{font-size:14px;color:#333}.up{text-align:center;font-weight:700;color:#15803d;padding:8px 0}
+.bars{margin:8px 0 4px}.bars .br{display:grid;grid-template-columns:52px 1fr;gap:8px;align-items:center;margin:8px 0}.bars .br>b{font-size:16px}.bars .tr2 div{height:22px;display:flex;align-items:center;padding:0 8px;color:#fff;font-size:13px;white-space:nowrap;margin:2px 0}.bars .a{background:#0f2a4a}.bars .h{background:#94a3b8}.bars .best b,.bars .best{color:#15803d}.bars .lg{font-size:13px;color:#55657a}.bars .lg i{display:inline-block;width:12px;height:12px;vertical-align:middle;margin:0 4px 0 10px}.roadtab{display:none}
+@media (max-width:720px){.clock .ax{margin-left:0}.clock .row{grid-template-columns:1fr}.hcard{grid-template-columns:1fr}.fl li{grid-template-columns:86px 1fr}.fl li img{width:86px;height:66px}.fl{grid-template-columns:40px 1fr}.fn{font-size:16px}}
 </style>
 </head><body><main>
 <div class="top"><span>PHOENIX PARK · 12.17–18</span></div>
@@ -191,7 +197,7 @@ nav.toc a.cur b{color:var(--accent,#c2410c);text-decoration:underline;text-under
 <ul class="pt">
 <li>원주역 서편 <b>1주차장 (2번 출구 앞)</b>에 들어가면 <b>15분 안에 나오면 무료</b>. 그 뒤 30분 600원 <a href="https://m.blog.naver.com/pudingy/224132742503" target="_blank">후기 2026-01</a></li>
 </ul>
-<details class="fold"><summary>혹시 장 볼 일 생기면 — 원주역 근처 마트 (9시에 여는 곳만) · 펼치기</summary>
+<details class="fold big"><summary><span>혹시 장 볼 일 생기면</span><small>원주역 근처 마트 3곳 · 9시에 여는 곳만</small><i>눌러서 보기</i></summary>
 <figure class="nmap"><a href="ev/nmap/wonju-marts.png" target="_blank" title="누르면 크게"><img src="ev/nmap/wonju-marts.png" alt="원주역 근처 마트"></a></figure>
 <div class="tw"><table><thead><tr><th>가게</th><th>여는 시간</th><th>역에서</th><th>메모</th></tr></thead><tbody>
 <tr><td><b>1</b> <a href="https://place.map.kakao.com/1757020638" target="_blank">CU 남원주IC점</a></td><td>24시간</td><td>차 5분</td><td>IC 가는 길. 급한 것만</td></tr>
@@ -227,6 +233,25 @@ nav.toc a.cur b{color:var(--accent,#c2410c);text-decoration:underline;text-under
 </tbody></table></div>
 <p class="note">에어리얼 4시간은 받은 때부터 → <b>11:50쯤 받기</b>. 넘기면 연장 요금 (지난 시즌 가격판에 "연장 5,000원", 1시간당인지는 모름). 헬멧은 1층 창구 — 바이저 품절 사례 있어 먼저 들르기. 일반 헬멧은 고글이 없음 → 선글라스·고글 챙기기 (단지 안 고글 대여 없음).</p>
 
+<h3>4시간이 두 개 — 시작이 다름</h3>
+<div class="clock"><div class="ax"><span style="left:0">11시</span><span style="left:20%">12</span><span style="left:40%">13</span><span style="left:60%">14</span><span style="left:80%">15</span><span style="left:100%">16시</span></div>
+<div class="row"><b>스키복 (에어리얼)</b><div class="tr"><i class="bar o" style="left:16.7%;width:80%">받은 때부터 4시간 · 11:50 → 15:50</i></div></div>
+<div class="row"><b>리프트 + 장비</b><div class="tr"><i class="bar g" style="left:20%;width:80%">게이트 QR 찍은 때부터 · 12:00 → 16:00</i></div></div>
+<p class="note">스키복을 너무 일찍 받으면 그만큼 먼저 끝남 → <b>11:50쯤 받기</b>. 넘기면 연장 요금.</p></div>
+<h3>헬멧 — 둘 중 하나</h3>
+<div class="hcard"><div><b>일반 헬멧</b><span class="pr">10,000원</span><ul><li>고글 <b>없음</b> → 선글라스·고글 따로 챙기기</li><li>단지 안 고글 대여 없음</li></ul></div><div class="hi"><b>바이저 헬멧</b><span class="pr">15,000원</span><ul><li>고글이 헬멧에 달려 있음 → 따로 필요 없음</li><li>품절 사례 있음 → <b>헬멧 창구 먼저</b></li></ul></div></div>
+<p class="note">스키하우스 1층 헬멧 창구 (공식: 시즌 락카 접수처 = 헬멧 대여소)</p>
+<h3>스키하우스 안에서 — 층별 순서</h3>
+<div class="floors"><div class="fl"><div class="fn">B1</div><ol>
+<li><img src="ev/rent/r1-ticket.jpg" alt=""><div><b>1 매표소</b>QR 보여주고 이용 카드 받기 (그냥 대여소로 가도 됐다는 후기도 있음 — 현장 안내 따르기)</div></li>
+<li><img src="ev/rent/r2-aerial.jpg" alt=""><div><b>2 에어리얼 스키복</b>4시간 2명만 · 11:50쯤 · 받고 B1 탈의실에서 갈아입기</div></li>
+<li><img src="ev/rent/r3-equip.jpg" alt=""><div><b>3 장비 대여소</b>부츠 → 스키 → 폴 순서로 받기</div></li>
+<li><img src="ev/rent/r4-boots.jpg" alt=""><div><b>4 부츠 신고 락카</b>신발·가방은 디지털 락카 (한 번 열면 다시 결제)</div></li>
+</ol></div><div class="up">↑ 한 층 위로 ("스노우 파크" 표지)</div><div class="fl"><div class="fn">1층</div><ol>
+<li><img src="ev/rent/r5-desk.jpg" alt=""><div><b>5 헬멧 창구</b>시즌 락카 접수처 = 헬멧 대여소</div></li>
+<li><img src="ev/nmap/lift-route.png" alt="" style="object-position:30% 70%"><div><b>6 몽블랑 게이트</b>QR·카드 찍기 → <b>리프트 4시간 시작</b></div></li>
+</ol></div></div>
+<p class="note">사진: 2026-01~02 후기 (<a href="https://m.blog.naver.com/hi_yoginijin/224152021091" target="_blank">hi_yoginijin</a> · <a href="https://m.blog.naver.com/baum941/224178370238" target="_blank">baum941</a> · <a href="https://m.blog.naver.com/baum941/224187358303" target="_blank">baum941</a>) · 층 표기는 안내판과 공식 페이지가 달라 현장 표지 우선</p>
 <h3>렌탈 끝 → 리프트까지</h3>
 <figure class="nmap wide"><a href="ev/nmap/lift-route.png" target="_blank"><img src="ev/nmap/lift-route.png" alt="스키하우스에서 초급 리프트까지"></a></figure>
 <ol class="pt">
@@ -281,8 +306,9 @@ nav.toc a.cur b{color:var(--accent,#c2410c);text-decoration:underline;text-under
 <li>있는 것: 전기포트, 4인 식기, 소형 냉장고(냉동 약함), 건조대, 드라이기, 샴푸·바디워시·비누, 수건 1인 1개</li>
 <li>고기·생선 굽기, 버너 사용 금지. 퇴실 전 설거지·분리수거</li>
 </ul>
-<div class="g4"><figure><img src="ev/room/orange-living.jpg" alt="거실"><figcaption>거실</figcaption></figure><figure><img src="ev/room/orange-bed.jpg" alt="방"><figcaption>방</figcaption></figure><figure><img src="ev/room/orange-kitchen.jpg" alt="주방"><figcaption>주방</figcaption></figure><figure><img src="ev/room/orange-bath.jpg" alt="욕실"><figcaption>욕실</figcaption></figure></div>
-<p class="note">사진: <a href="https://m.blog.naver.com/pineapple171/224314065667" target="_blank">오렌지동 스탠다드 후기 (2026-06)</a></p>
+<div class="g4"><figure><img src="ev/room/orange-living.jpg" alt="거실"><figcaption>거실</figcaption></figure><figure><img src="ev/room/orange-bed.jpg" alt="방"><figcaption>방 (침대형일 때)</figcaption></figure><figure><img src="ev/room/orange-kitchen.jpg" alt="주방"><figcaption>주방</figcaption></figure><figure><img src="ev/room/orange-bath.jpg" alt="욕실"><figcaption>욕실</figcaption></figure></div>
+<p><b>침대는 운</b> — 스탠다드는 <b>침대형(침대 1개)</b>과 <b>온돌형(침대 없음)</b>이 체크인 때 랜덤 배정. 예약 때 못 고르고 현장에서 요청만 가능. 4명이면 침대형은 2명 침대 + 2명 바닥, 온돌형은 4명 다 바닥. 이불 모자라면 1채 10,000원 (공식).</p>
+<p class="note">사진: <a href="https://m.blog.naver.com/pineapple171/224314065667" target="_blank">오렌지동 스탠다드 후기 (2026-06, 침대형)</a> · 온돌형 후기 2026-11 2건</p>
 </div></section>
 
 <section class="step" id="f"><div class="t"><b>식당</b><span>1인 1.5만 이하</span></div><div>
@@ -320,7 +346,8 @@ nav.toc a.cur b{color:var(--accent,#c2410c);text-decoration:underline;text-under
 <li><b>13:30</b><span>귀가 점심 (식당 표 "18 점심")</span></li>
 </ol>
 <h3>귀가길 — 몇 시에 출발하나</h3>
-<div class="tw"><table><thead><tr><th>휘닉스 출발</th><th>수원역까지</th><th>집까지 (수원 거쳐)</th></tr></thead><tbody>
+<div id="roadbars" class="bars"></div>
+<div class="tw roadtab"><table><thead><tr><th>휘닉스 출발</th><th>수원역까지</th><th>집까지 (수원 거쳐)</th></tr></thead><tbody>
 <tr><td><b>13:00</b></td><td><b>2시간 14분</b></td><td><b>3시간 41분</b></td></tr>
 <tr><td>14:00</td><td>2시간 41분</td><td>4시간 17분</td></tr>
 <tr><td>15:00</td><td>3시간 1분</td><td>4시간 35분</td></tr>
@@ -457,4 +484,5 @@ document.querySelectorAll('.tw table').forEach(tb=>{const hs=[...tb.querySelecto
 (function(){const links=[...document.querySelectorAll('.toc a')];const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
 function upd(){let k=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)k=i});links.forEach((a,i)=>a.classList.toggle('cur',i===k));const c=links[k],n=c.parentElement;if(n.scrollWidth>n.clientWidth){const x=c.offsetLeft-n.clientWidth/2+c.offsetWidth/2;if(Math.abs(n.scrollLeft-x)>40)n.scrollTo({left:x,behavior:'smooth'})}}
 addEventListener('scroll',()=>requestAnimationFrame(upd),{passive:true});upd();})();
-</script></body></html>
+</script><script>(function(){const tb=document.querySelector('.roadtab tbody');const box=document.getElementById('roadbars');if(!tb||!box)return;const m=s=>{const h=/(\d+)시간/.exec(s),mi=/(\d+)분/.exec(s);return (h?+h[1]*60:0)+(mi?+mi[1]:0)};const rows=[...tb.rows].map(r=>({t:r.cells[0].innerText.trim(),a:m(r.cells[1].innerText),h:m(r.cells[2].innerText),as:r.cells[1].innerText.trim(),hs:r.cells[2].innerText.trim()}));const mx=Math.max(...rows.map(r=>r.h));const best=Math.min(...rows.map(r=>r.a));box.innerHTML='<div class="lg"><i class="a" style="background:#0f2a4a"></i>수원역까지<i style="background:#94a3b8"></i>집까지 (수원 거쳐)</div>'+rows.map(r=>`<div class="br${r.a===best?' best':''}"><b>${r.t}</b><div class="tr2"><div class="a" style="width:${r.a/mx*100}%">${r.as}${r.a===best?'':' (+'+(r.a-best)+'분)'}</div><div class="h" style="width:${r.h/mx*100}%">${r.hs}</div></div></div>`).join('')})()</script>
+</body></html>
