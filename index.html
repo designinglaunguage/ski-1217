@@ -1,0 +1,447 @@
+<!doctype html><html lang="ko"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>휘닉스 계획</title>
+<style>
+:root{--ink:#111;--mid:#6b6b6b;--rule:#e2e2dc;--bg:#fafaf7;--hi:#ffe14d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 Pretendard,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;letter-spacing:-.01em;word-break:keep-all}
+main{max-width:1240px;margin:0 auto;padding:28px 32px 120px}
+a{color:inherit;text-underline-offset:3px;text-decoration-color:#bbb}
+.top{display:flex;justify-content:space-between;font-size:13px;font-weight:600;letter-spacing:.06em;border-bottom:1px solid var(--ink);padding-bottom:10px}
+h1{font-size:56px;line-height:1.1;font-weight:800;letter-spacing:-.04em;margin:48px 0 14px}
+mark{background:linear-gradient(transparent 58%,var(--hi) 58%);color:inherit}
+.sub{font-size:19px;color:#333;margin:0}
+nav.toc{position:sticky;top:0;z-index:1000;background:var(--bg);display:flex;flex-wrap:wrap;gap:2px 22px;margin:30px 0 0;padding:10px 0;border-bottom:2px solid var(--ink)}
+nav.toc a{display:block;padding:2px 0;text-decoration:none;font-size:16px;color:var(--ink)}.toc a span{display:none}.toc a:hover b{text-decoration:underline}
+section.step{scroll-margin-top:60px}
+nav.toc a b{font-weight:700}
+.step{display:grid;grid-template-columns:150px 1fr;gap:32px;margin-top:76px}
+.step>div{min-width:0}
+.step .t{position:sticky;top:64px;align-self:start}
+.step .t b{display:block;font-size:28px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.step .t span{font-size:13px;color:var(--mid)}
+h2{font-size:30px;font-weight:800;letter-spacing:-.03em;margin:0 0 12px;line-height:1.25}
+h3{font-size:18px;font-weight:700;margin:28px 0 6px}
+p{margin:0 0 14px}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;margin:8px 0 16px;font-size:15.5px}
+th{font-size:13px;font-weight:600;color:var(--mid);text-align:left;padding:0 12px 8px 0;border-bottom:1px solid var(--ink);white-space:nowrap}
+td{padding:10px 12px 10px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+td.n{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+td.no{color:#b5b5ad}
+td.am{font-weight:700}
+td small,.calc{font-size:11px;color:var(--mid);font-weight:600}
+ol.time{list-style:none;padding:0;margin:6px 0 16px;border-top:2px solid var(--ink)}
+ol.time li{display:grid;grid-template-columns:84px 1fr;padding:9px 0;border-bottom:1px solid var(--rule)}
+ol.time li b{font-variant-numeric:tabular-nums}
+ol.time li.hl b{background:var(--hi);justify-self:start;padding:0 4px}
+ul.pt{margin:0 0 16px;padding-left:18px}ul.pt li{margin:5px 0}ul.pt li::marker{color:#999}
+.say{border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);padding:14px 0;margin:16px 0;font-size:18px;font-weight:600}
+.q{border-left:4px solid var(--hi);padding:4px 0 4px 14px;margin:10px 0}
+.q b{display:block}
+.note{font-size:14px;color:var(--mid)}
+footer{margin-top:90px;border-top:1px solid var(--ink);padding-top:14px;font-size:13px;color:var(--mid)}
+@media (max-width:720px){main{padding:20px 16px 80px}h1{font-size:38px}.step{grid-template-columns:1fr;gap:8px;margin-top:52px}.step .t{position:static}}
+details{margin:14px 0}details>summary{font-weight:700;font-size:18px;cursor:pointer;padding:8px 0;border-bottom:1px solid var(--ink)}
+figure.nmap{margin:14px 0;max-width:720px}figure.nmap img{width:100%;display:block;border:1px solid #ddd}figure.nmap figcaption{font-size:13px;color:#666;margin-top:6px}
+.vg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px 14px;margin:10px 0 24px}
+.vc{text-decoration:none;display:block}.vc b{display:block;font-size:15px;margin-top:6px;line-height:1.35}.vc small{font-size:13px;color:var(--mid)}
+.th{display:block;position:relative;aspect-ratio:16/9;background:#222 center/cover;border:1px solid #ddd}
+.th i{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:48px;height:34px;background:#e00;color:#fff;font-style:normal;font-size:16px;display:grid;place-items:center;border-radius:8px}
+.th em{position:absolute;right:6px;bottom:6px;background:rgba(0,0,0,.8);color:#fff;font-style:normal;font-size:12px;padding:1px 5px}
+.th u{position:absolute;left:6px;top:6px;background:var(--hi);color:#111;text-decoration:none;font-weight:800;font-size:12px;padding:1px 6px}
+.vc:hover b{text-decoration:underline}
+.mf{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.mf button{font:inherit;font-size:14px;border:1px solid #bbb;background:#fff;padding:5px 12px;cursor:pointer}.mf button.on{background:#111;color:#fff;border-color:#111}
+.mapwrap{display:grid;grid-template-columns:1fr 300px;border:1px solid #ccc;align-items:start}
+#fmap{background:#eef5ee}#fimg{width:100%;height:auto;display:block}#flist{margin:0;padding:0;list-style:none;overflow-y:auto;max-height:780px;border-left:1px solid #ccc;font-size:14px}
+#flist li{display:grid;grid-template-columns:30px 1fr;gap:6px;padding:8px 10px;border-bottom:1px solid #eee;cursor:pointer}#flist li:hover,#flist li.on{background:#fff6cc}
+#flist li b{display:block}#flist li small{color:#666}
+.pin{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:#fff;font:700 12px/1 Pretendard,"Malgun Gothic",sans-serif;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.4)}
+.pin.w{background:#c2410c}.pin.c{background:#64748b}
+.lm{display:flex;align-items:center;gap:4px;white-space:nowrap;font:700 12px/1 Pretendard,"Malgun Gothic",sans-serif;color:#111;text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 3px #fff}.lm i{width:12px;height:12px;background:#111;border:2px solid #fff;flex:none}
+#flist .n{width:24px;height:24px;border-radius:50%;color:#fff;display:grid;place-items:center;font-weight:700;font-size:12px}
+@media (max-width:820px){.mapwrap{grid-template-columns:1fr;height:auto}#fmap{height:420px}#flist{max-height:300px;border-left:0;border-top:1px solid #ccc}}.leaflet-popup-content{font:14px/1.5 Pretendard,"Malgun Gothic",sans-serif}
+.ck{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--ink);margin:8px 0 10px}
+.ck>div{padding:10px 14px 6px 0}.ck h4{margin:0 0 6px;font-size:15px;color:var(--mid)}
+.ck ul{list-style:none;margin:0;padding:0}.ck li{padding:5px 0 5px 26px;position:relative;border-bottom:1px solid var(--rule)}
+.ck li::before{content:"";position:absolute;left:0;top:9px;width:14px;height:14px;border:1.5px solid #333}
+@media (max-width:720px){.ck{grid-template-columns:1fr 1fr}}
+#rmap{height:320px;border:1px solid #ccc;margin:6px 0}
+#wmap{height:340px;border:1px solid #ccc;margin:6px 0}
+.ck li{cursor:pointer;user-select:none}.ck li.on{color:#999;text-decoration:line-through}.ck li.on::before{background:#1f9d3a;border-color:#1f9d3a}.ck li.on::after{content:"";position:absolute;left:4px;top:11px;width:6px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.tg{font-size:12px;padding:0 5px;border:1px solid #999;color:#444;white-space:nowrap}
+#ftab{font-size:14px;width:100%}#ftab td:nth-child(3){white-space:nowrap}#ftab td:nth-child(1){width:28px}#ftab .ml{font-size:12px;color:#555}
+.ck li.must{font-weight:700}.ck li.must::before{border:2px solid #b91c1c}
+.ck li.opt{color:#666;font-size:15px}.ck li.opt::before{border:1.5px dashed #999}
+.lg{font-size:14px;color:#555;margin:4px 0}.lg .must{font-weight:700;color:#b91c1c}.lg .opt{color:#777;border-bottom:1px dashed #999}
+#ftab .m3{color:#555;font-size:13.5px;font-weight:400}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.g2 img{width:100%}
+.more{display:block;width:100%;margin:8px 0 0;padding:12px;font:inherit;font-weight:700;background:#fff;border:1px solid var(--ink);cursor:pointer}.more:hover{background:#f3efe6}
+.flow{margin:10px 0 18px}.flow svg{width:100%;height:auto;display:block}
+.wx{border-left:3px solid var(--ink);padding:8px 14px;margin:0 0 16px;background:#f6f1e9}.wx table{margin:6px 0;font-size:15px}.wx td{padding:3px 12px 3px 0;border:0}.wx small{color:#6b7280}
+.wx .ok{color:#15803d}.wx .no{color:#b91c1c}
+#cf{margin-top:-4px}#cf button{font-size:13px}.fc{font-style:normal;font-size:12px;color:#6b7280}#ftab .ct{white-space:nowrap;color:#55657a;font-size:13px}
+.ill{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:0 0 18px}.ill figure{margin:0;border-top:2px solid var(--ink);padding-top:6px}.ill img{width:100%;display:block}.ill figcaption{font-size:13px;color:#55657a}.ill figcaption b{display:block;font-size:15px;color:var(--ink)}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0 4px}.g4 figure{margin:0}.g4 img{width:100%;height:220px;object-fit:cover;display:block}.g4 figcaption{font-size:13px;color:#55657a;padding-top:3px}
+details.fold{margin:12px 0;border-top:1px solid #d8d3c8;border-bottom:1px solid #d8d3c8}details.fold>summary{cursor:pointer;padding:10px 0;font-weight:700;color:#55657a}details.fold[open]>summary{color:var(--ink)}
+.step.past>div:nth-child(2){display:none}.step.past .t{cursor:pointer}.step .pastbar{display:none}.step.past .pastbar{display:block;grid-column:2;padding:12px 0;border-top:1px solid #d8d3c8;border-bottom:1px solid #d8d3c8;color:#55657a;cursor:pointer;font-weight:700}.step[data-until] .t{cursor:pointer}
+
+@media (max-width:720px){
+ nav.toc{flex-wrap:nowrap;overflow-x:auto;gap:0 18px;margin-top:16px;padding:8px 0;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+ .toc::-webkit-scrollbar{display:none}
+ nav.toc a{white-space:nowrap;font-size:15px}
+ .step .t{position:static}
+ a[href^="tel:"]{white-space:nowrap}
+ .tw table:not(#ftab) thead,#ftab thead{display:none}
+ .tw table,.tw tbody,.tw tr,.tw td{display:block;width:auto!important}
+ .tw tr{padding:10px 0;border-bottom:1px solid #d8d3c8}
+ .tw td{border:0!important;padding:2px 0!important;text-align:left!important}
+ .tw td[data-l]:not(:first-child)::before{content:attr(data-l) " · ";color:#7a8597;font-size:13px;font-weight:400}
+ .tw td:first-child{font-weight:700}
+ #ftab td:first-child{display:inline-block;margin-right:6px}#ftab td:nth-child(2){display:inline-block}
+ #ftab td:nth-child(3){white-space:normal}
+ .vg{grid-template-columns:1fr 1fr;gap:12px 10px}
+ .ill{grid-template-columns:repeat(3,1fr)}
+ .g4{grid-template-columns:1fr 1fr}.g4 img{height:140px}
+ .g2{grid-template-columns:1fr!important}
+ .mapwrap{grid-template-columns:1fr}
+ #flist{max-height:320px;border-left:0;border-top:1px solid #ccc}
+}
+nav.toc a.cur b{color:var(--accent,#c2410c);text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
+.bcp img{object-fit:cover}.bcp figure:first-child img{object-fit:contain;background:#eef}
+</style>
+</head><body><main>
+<div class="top"><span>PHOENIX PARK · 12.17–18</span></div>
+<h1>휘닉스 <mark>1박 2일</mark></h1>
+<nav class="toc">
+<a href="#p"><b>준비물</b><span>살 것 · 챙길 것 · 장보기</span></a>
+<a href="#call"><b>전화·링크</b><span>누르면 전화 · 당일 확인</span></a>
+<a href="#m"><b>도착·주차</b><span>원주역 15분 무료 · 블루동 지하</span></a>
+<a href="#r"><b>렌탈·슬로프</b><span>비용 · 리프트 가는 길 · 슬로프</span></a>
+<a href="#fac"><b>저녁·숙소</b><span>놀거리 · 편의점 · 객실</span></a>
+<a href="#f"><b>식당</b><span>54곳</span></a>
+<a href="#d2"><b>12.18(블루캐니언)</b><span>블루캐니언 · 퇴실 · 귀가</span></a>
+<a href="#t"><b>초보 팁</b><span>영상 14개 · 넘어지기 · 멈추기 · 리프트</span></a>
+</nav>
+
+<section class="step" id="p" data-until="2026-12-17T06:00"><div class="t"><b>준비물</b><span>각자</span></div><div>
+<div class="wx"><b>날씨 예보 · 봉평</b> <small>12/2쯤부터 예보가 나오면 자동으로 채워짐</small></div>
+<p class="lg"><span class="must">필수</span> 꼭 챙기기 · <span class="opt">선택</span> 있으면 좋음 · 누르면 체크</p>
+<div class="ck">
+<div><h4>스키</h4><ul>
+<li class="must">방수 장갑</li><li class="must">이너 상하 — 면 말고 기능성·히트텍</li><li class="must">긴 양말 2켤레 — 정강이 덮고 무릎 아래까지 (부츠보다 높게)</li><li class="must">스키복 — 야간 2명만</li><li class="opt">넥워머</li><li class="opt">보온층 (플리스)</li><li class="opt">선크림 · 립밤</li></ul></div>
+<div><h4>블루캐니언</h4><ul>
+<li class="must">수영복</li><li class="opt">캡 모자</li><li class="must">비닐봉지 (젖은 옷)</li></ul></div>
+<div><h4>지갑 · 폰</h4><ul>
+<li class="must">신분증</li><li class="must">휴대전화</li><li class="opt">보조배터리 · 충전기</li></ul></div>
+<div><h4>숙소 · 귀가</h4><ul>
+<li class="must">칫솔 · 치약</li><li class="must">여벌 속옷 2벌</li><li class="must">갈아입을 옷 (잘 때 · 귀가)</li><li class="opt">스킨 · 로션</li><li class="opt">편한 신발</li><li class="opt">물티슈</li></ul></div>
+</div>
+<p class="note">안 챙겨도 됨: 샴푸 · 드라이기 (객실에 있음). 객실 수건은 1인 1개</p>
+<h3>전날 장보기 (공용)</h3>
+<p>물 · 음료 · 맥주 · 안주 · 과자 · 컵라면 4개</p>
+<details><summary>넥워머 · 양말 참고 상품</summary>
+<ul class="pt">
+<li><a href="https://www.daisomall.co.kr/pd/pdr/SCR_PDR_0001?pdNo=1080988" target="_blank">다이소 넥워머</a> 2,000 · <a href="https://www.daisomall.co.kr/pd/pdr/SCR_PDR_0001?pdNo=1079221" target="_blank">다이소 긴 양말</a> 3,000 (온라인)</li>
+</ul></details>
+</div></section>
+
+<section class="step" id="call"><div class="t"><b>전화·링크</b><span>누르면 전화</span></div><div>
+<h3>전화</h3>
+<div class="tw"><table><thead><tr><th>언제</th><th>어디</th><th>번호</th></tr></thead><tbody>
+<tr><td><b>다쳤을 때</b></td><td>의무실 (유스호스텔 1층) — 슬로프에선 근처 패트롤·직원 부르기. 사고 기록지 작성, 신분증 챙기기</td><td><a href="tel:0333306363"><b>033-330-6363</b></a></td></tr>
+<tr><td>리프트권·패키지</td><td>통합 매표소 (스키하우스)</td><td><a href="tel:0333306383">033-330-6383</a></td></tr>
+<tr><td>장비 (부츠·스키)</td><td>장비 대여소 (스키하우스 B1)</td><td><a href="tel:0333306359">033-330-6359</a></td></tr>
+<tr><td>스키복</td><td>에어리얼 (스키하우스 B1)</td><td><a href="tel:0333306398">033-330-6398</a></td></tr>
+<tr><td>스키복 차선</td><td>제트스키 (단지 밖)</td><td><a href="tel:01075166516">010-7516-6516</a></td></tr>
+<tr><td>치킨</td><td>리에토 (블루동)</td><td><a href="tel:0333306023">033-330-6023</a></td></tr>
+<tr><td>스파</td><td>블루캐니언</td><td><a href="tel:0333303200">033-330-3200</a></td></tr>
+<tr><td>볼링·노래방</td><td>센터플라자 시설</td><td><a href="tel:0333306324">033-330-6324</a></td></tr>
+<tr><td>객실·기타</td><td>휘닉스 대표</td><td><a href="tel:15770069">1577-0069</a></td></tr>
+</tbody></table></div>
+<p class="note">패트롤 직통 번호는 공식에 없음 → 슬로프에선 가까운 직원·패트롤에게 직접 알리기.</p>
+<h3>당일 아침에 확인</h3>
+<p class="note">슬로프·블루캐니언 운영 현황은 각 지도 바로 아래에 있음 (12/16 저녁·17·18일 아침 자동 갱신)</p>
+<p class="note">26/27 시즌 최신 후기는 11/29부터 사흘마다 자동으로 모아 여기에 붙음</p>
+<ul class="pt">
+<li><a href="https://search.naver.com/search.naver?query=%ED%8F%89%EC%B0%BD%EA%B5%B0+%EB%B4%89%ED%8F%89%EB%A9%B4+%EB%82%A0%EC%94%A8" target="_blank"><b>봉평면 날씨</b></a> — 기온·눈 (네이버)</li>
+<li><b>귀가길</b> — 12.18 칸에 출발 시각별 예상 시간 있음. 당일 실시간은 <a href="http://www.roadplus.co.kr" target="_blank">로드플러스</a></li>
+</ul>
+</div></section>
+
+<section class="step" id="m" data-until="2026-12-17T12:00"><div class="t"><b>도착·주차</b><span>원주역 · 블루동</span></div><div>
+<h3>내비에 찍을 곳</h3>
+<div class="tw"><table><thead><tr><th>순서</th><th>내비 검색어</th><th>주소</th></tr></thead><tbody>
+<tr><td>1</td><td><b>원주역 1주차장</b> (2번 출구 앞)</td><td>원주시 북원로 1860 (원주역)</td></tr>
+<tr><td>(장 볼 때만)</td><td>하나로클럽 무실점 — 2층 다이소</td><td>원주시 무실로 182</td></tr>
+<tr><td>2</td><td><b>휘닉스파크 블루동 주차장</b></td><td>평창군 봉평면 태기로 174</td></tr>
+</tbody></table></div>
+<h3>원주역에서 태우기</h3>
+<figure class="nmap"><a href="ev/nmap/wonju-station.png" target="_blank" title="누르면 크게"><img src="ev/nmap/wonju-station.png" alt="원주역 픽업 지도"></a></figure>
+<ul class="pt">
+<li>원주역 서편 <b>1주차장 (2번 출구 앞)</b>에 들어가면 <b>15분 안에 나오면 무료</b>. 그 뒤 30분 600원 <a href="https://m.blog.naver.com/pudingy/224132742503" target="_blank">후기 2026-01</a></li>
+</ul>
+<details class="fold"><summary>혹시 장 볼 일 생기면 — 원주역 근처 마트 (9시에 여는 곳만) · 펼치기</summary>
+<figure class="nmap"><a href="ev/nmap/wonju-marts.png" target="_blank" title="누르면 크게"><img src="ev/nmap/wonju-marts.png" alt="원주역 근처 마트"></a></figure>
+<div class="tw"><table><thead><tr><th>가게</th><th>여는 시간</th><th>역에서</th><th>메모</th></tr></thead><tbody>
+<tr><td><b>1</b> <a href="https://place.map.kakao.com/1757020638" target="_blank">CU 남원주IC점</a></td><td>24시간</td><td>차 5분</td><td>IC 가는 길. 급한 것만</td></tr>
+<tr><td><b>2</b> <a href="https://place.map.kakao.com/13027052" target="_blank">하나로클럽 무실점</a> + <a href="https://place.map.kakao.com/1711684458" target="_blank">2층 다이소</a></td><td>09:00 · 다이소 09:00</td><td>차 9분</td><td>한 건물에서 장보기 + 다이소. 무실로 182</td></tr>
+<tr><td><b>3</b> <a href="https://place.map.kakao.com/25617966" target="_blank">홈플러스익스프레스 무실점</a></td><td>09:00</td><td>차 7분</td><td>작은 마트</td></tr>
+</tbody></table></div></details>
+<h3>휘닉스 도착</h3>
+<figure class="nmap"><a href="ev/nmap/resort.png" target="_blank" title="누르면 크게"><img src="ev/nmap/resort.png" alt="블루동 주차·스키하우스 동선"></a></figure>
+<ul class="pt">
+<li>블루동 체크인센터를 지나 지상 주차장에 들어서자마자 <b>왼쪽</b>이 지하주차장 입구</li>
+<li>지하주차장은 블루·그린·오렌지동이 이어져 있음. 기둥에 동별 색 표시 — <b>주차한 층·기둥 사진 찍어 두기</b></li>
+<li>평일 정오에 입구 쪽 주차장이 가득 찬 사례 있음. 10시 전 도착이면 여유</li>
+<li><b>차에 두고 갈 것:</b> 객실용 옷, 먹을 것, 블루캐니언 가방</li>
+<li><b>B1로 들고 갈 것:</b> 신분증, 스키용 이너·양말, 일반 신발(락카에)</li>
+</ul>
+</div></section>
+
+<section class="step" id="r" data-until="2026-12-17T22:00"><div class="t"><b>렌탈·슬로프</b><span>패키지 외 추가</span></div><div>
+<p>패키지: 리프트 + 장비(스키·부츠·폴) 4시간, 4명 모두 포함.</p>
+<h3>스키복: 에어리얼, 차선은 제트스키</h3>
+<div class="tw"><table><thead><tr><th></th><th>가게</th><th>위치</th><th>4시간 상하</th></tr></thead><tbody>
+<tr><td><b>1순위</b></td><td>에어리얼 (리조트 공식 의류렌탈) · 033-330-6398</td><td>스키하우스 B1 에스컬레이터 옆 — 장비와 같은 층</td><td class="n">23,000 (지난 시즌)</td></tr>
+<tr><td>차선</td><td><a href="https://place.map.kakao.com/14711098" target="_blank">제트스키</a> · 010-7516-6516</td><td>단지 밖 태기로 151 (명가 건물) — 걸어서 5분, 287m</td><td class="n">20,000 (올해 가격판)</td></tr>
+</tbody></table></div>
+<figure class="nmap"><a href="ev/nmap/rent-map.png" target="_blank" title="누르면 크게"><img src="ev/nmap/rent-map.png" alt="에어리얼·제트스키 위치"></a></figure>
+<p class="note">에어리얼에 옷이 없거나 줄이 길면 제트스키.</p>
+
+<div class="tw"><table><thead><tr><th>항목</th><th>어디서</th><th>4시간 2명</th><th>야간 2명</th></tr></thead><tbody>
+<tr><td>스키복 상하 세트 (4시간 2명만)</td><td>스키하우스 B1 에어리얼</td><td class="n">23,000</td><td class="n">— (자기 옷)</td></tr>
+<tr><td>헬멧 — 일반 / 바이저(고글 달린 것)</td><td>스키하우스 1층 헬멧 창구</td><td class="n">10,000 / 15,000</td><td class="n">10,000 / 15,000</td></tr>
+<tr><td>야간 연장 (리프트 6H + 장비 6H)</td><td>공식 온라인</td><td class="n">—</td><td class="n">83,300</td></tr>
+<tr><td><b>1인 합계</b> <span class="calc">[계산]</span></td><td></td><td class="n">약 3.3~3.8만</td><td class="n">약 9.3~9.8만</td></tr>
+</tbody></table></div>
+<p class="note">에어리얼 4시간은 받은 때부터 → <b>11:50쯤 받기</b>. 넘기면 연장 요금 (지난 시즌 가격판에 "연장 5,000원", 1시간당인지는 모름). 헬멧은 1층 창구 — 바이저 품절 사례 있어 먼저 들르기. 일반 헬멧은 고글이 없음 → 선글라스·고글 챙기기 (단지 안 고글 대여 없음).</p>
+
+<h3>렌탈 끝 → 리프트까지</h3>
+<ol class="pt">
+<li>"스노우 파크" 표지 따라 <b>한 층 위로</b> → <b>몽블랑 게이트</b> (옆 관광곤돌라 입구 아님)</li>
+<li>게이트에서 QR·카드 찍기 — <b>이때부터 4시간 시작</b>. 리프트마다 찍지 않음</li>
+<li><b>펭귄</b>: 나와서 <b>왼쪽</b>(호텔 쪽), "PENGUIN · Beginner" 표지 · 약 150~250m, 5~10분</li>
+<li><b>스패로우</b>: 나와서 <b>오른쪽 끝까지</b>, 호크·스노우빌리지 지나서 · 오르막 있음 · 약 300~450m, 10~20분</li>
+<li>오른쪽에서 처음 보이는 리프트는 <b>호크(중급, 6인승)</b> → 타지 말고 이름 확인</li>
+<li>스키·폴은 들고 걷고, 리프트 앞 평평한 곳에서 신기</li>
+</ol>
+<p class="note">거리·시간은 지도로 잰 대략값. 후기 2024-12~2026-02 기준 </p>
+
+<h3>슬로프 난이도</h3>
+<figure class="nmap"><a href="ev/official/slope-map-levels.png" target="_blank" title="누르면 크게"><img src="ev/official/slope-map-levels.png" alt="휘닉스 슬로프 난이도 지도"></a><figcaption>공식 슬로프 지도 + 난이도(공식 표, 11/27). 초급은 스패로우·펭귄. 도도는 강습 전용.</figcaption></figure>
+<div class="wx"><b>지금 열린 슬로프 (공식)</b> <small>11/27 23:53 자동 확인 · 12/16 저녁·12/17 아침에 다시 갱신</small>
+<table><tr><td>스패로우</td><td><b class="ok">열림</b> 주간 09:00-16:00</td></tr><tr><td>펭귄</td><td><b class="no">아직 안 열림</b></td></tr><tr><td>도도</td><td><b class="ok">열림</b> 주간 09:00-16:00</td></tr><tr><td>호크</td><td><b class="ok">열림</b> 주간 09:00-16:00</td></tr><tr><td>야간</td><td><b class="no">야간 운영 슬로프 아직 없음</b></td></tr></table>
+<small>출처: <a href="https://www.phoenixhnr.co.kr/static/pyeongchang/snowpark/slope-lift" target="_blank">공식 슬로프 현황</a></small></div>
+<div class="tw"><table><thead><tr><th>난이도</th><th>슬로프</th><th>길이 · 평균 경사</th></tr></thead><tbody>
+<tr><td><b style="color:#1f9d3a">● 초급</b></td><td><b>스패로우</b> · <b>펭귄</b> · 도도(강습 전용)</td><td>978m 7° · 665m 8° · 350m 7°</td></tr>
+<tr><td><b style="color:#1f5fd1">■ 중급</b></td><td>호크 · 키위 · 파노라마</td><td>11° · 13° · 10°(1.45km)</td></tr>
+<tr><td><b style="color:#d9441b">■ 중상급</b></td><td>밸리 · 듀크 · 슬로프스타일</td><td>14~15°</td></tr>
+<tr><td><b>◆ 상급 / ◆◆ 최상급</b></td><td>챔피언 · 환타지 / 디지 · 모글 · 파라다이스</td><td>10~19°</td></tr>
+</tbody></table></div>
+</div></section>
+
+<section class="step" id="fac" data-until="2026-12-18T10:00"><div class="t"><b>저녁·숙소</b><span>놀거리 · 편의점 · 객실</span></div><div>
+<h3>시설 위치</h3>
+<figure class="nmap"><a href="ev/nmap/facilities.png" target="_blank" title="누르면 크게"><img src="ev/nmap/facilities.png" alt="휘닉스 단지 시설 지도"></a></figure>
+<h3>저녁 놀거리 (센터플라자)</h3>
+<div class="tw"><table><thead><tr><th>시설</th><th>위치</th><th>12/17 시간</th><th>성인 요금</th></tr></thead><tbody>
+<tr><td><b>볼링</b></td><td>센터플라자 B1</td><td>15:00–23:00</td><td>1게임 7,000 + 신발 2,000 = 9,000</td></tr>
+<tr><td><b>노래방</b></td><td>센터플라자 B1</td><td>24시간</td><td>30분 방 하나 15,000 (특실 20,000)</td></tr>
+<tr><td>게임랜드</td><td>센터플라자 B1</td><td>24시간</td><td>기계마다 다름</td></tr>
+<tr><td>실내 양궁장</td><td>센터플라자 2층</td><td>11:00–23:00</td><td>15발 8,000 · 30발 12,000</td></tr>
+<tr><td>인생네컷</td><td>블루동 1층 복도</td><td>24시간</td><td>모름</td></tr>
+</tbody></table></div>
+<p class="note">11/27 공식 안내 기준.</p>
+<div class="g2"><figure class="nmap"><a href="ev/indoor/skihouse-floor-guide-20241205.jpg" target="_blank" title="누르면 크게"><img src="ev/indoor/skihouse-floor-guide-20241205.jpg" alt="스키하우스 안내판"></a><figcaption>스키하우스 안내판 (2024-12 후기 사진)</figcaption></figure>
+<figure class="nmap"><a href="ev/indoor/centerplaza-floor-guide-20261004.jpg" target="_blank" title="누르면 크게"><img src="ev/indoor/centerplaza-floor-guide-20261004.jpg" alt="센터플라자 층별 안내도"></a><figcaption>센터플라자 층별 안내도 (2026-10 후기 사진)</figcaption></figure></div>
+<div class="tw"><table><thead><tr><th>시설</th><th>위치</th><th>시간 · 값</th><th>알아 둘 것</th></tr></thead><tbody>
+<tr><td>탈의실</td><td>스키하우스 B1</td><td>무료</td><td>커튼 부스형: 정문 기준 왼쪽 끝 락커 쪽 (후기)</td></tr>
+<tr><td>디지털 락카</td><td>스키하우스 B1</td><td>소형 4,000 · 대형 6,000</td><td><b>한 번 열면 다시 결제</b>. 최대 10시간. 대형에 4명 신발·가방 넣은 사례</td></tr>
+<tr><td>데일리 락카</td><td>스키하우스 1층</td><td>소형 10,000 · 대형 15,000</td><td>여러 번 열고 닫기 가능</td></tr>
+<tr><td>CU 편의점</td><td>스키하우스 B1</td><td>09:00–22:00</td><td>12/4부터</td></tr>
+<tr><td>CU 편의점</td><td>센터플라자</td><td>17일 08–23 · 18일 08–24</td><td></td></tr>
+<tr><td>체크인센터</td><td>블루동 1층</td><td>입실 15:00</td><td>모바일 객실 선택은 12시부터(후기). 청소 지연으로 17시 넘어 입실한 사례</td></tr>
+<tr><td>전자레인지</td><td>오렌지동 1층 로비 2대 · 연결통로 코인세탁실 2대</td><td></td><td>식사 시간엔 줄 김. 객실엔 없음</td></tr>
+</tbody></table></div>
+<h3>객실 (오렌지동 스탠다드)</h3>
+<ul class="pt">
+<li>66㎡, 4명. 거실·방·주방·욕실 1개씩. 세면대가 욕실 밖에 따로 있는 방도 있음</li>
+<li>있는 것: 전기포트, 4인 식기, 소형 냉장고(냉동 약함), 건조대, 드라이기, 샴푸·바디워시·비누, 수건 1인 1개</li>
+<li>고기·생선 굽기, 버너 사용 금지. 퇴실 전 설거지·분리수거</li>
+</ul>
+<div class="g4"><figure><img src="ev/room/orange-living.jpg" alt="거실"><figcaption>거실</figcaption></figure><figure><img src="ev/room/orange-bed.jpg" alt="방"><figcaption>방</figcaption></figure><figure><img src="ev/room/orange-kitchen.jpg" alt="주방"><figcaption>주방</figcaption></figure><figure><img src="ev/room/orange-bath.jpg" alt="욕실"><figcaption>욕실</figcaption></figure></div>
+<p class="note">사진: <a href="https://m.blog.naver.com/pineapple171/224314065667" target="_blank">오렌지동 스탠다드 후기 (2026-06)</a></p>
+</div></section>
+
+<section class="step" id="f"><div class="t"><b>식당</b><span>1인 1.5만 이하</span></div><div>
+<h3>리에토 치킨 (패키지 포함 1세트)</h3>
+<div class="tw"><table><tbody>
+<tr><td>어디</td><td>블루동 B1·1층 리에토(치킨하우스) · <a href="tel:0333306023">033-330-6023</a></td></tr>
+<tr><td>언제</td><td><b>17:00부터</b> 주문, 주문 마감 21:00 (매장 사진엔 21:30) — 22시 닫음</td></tr>
+<tr><td>받는 법</td><td>예약 알림톡의 시설권(치킨 세트)을 보여주고 교환. 블루동 1층 카페에서 교환·수령한 후기</td></tr>
+</tbody></table></div>
+<details class="fold"><summary>리에토 더 보기 — 기다림 · 음료 바꾸기 · 4명이면</summary><div class="tw"><table><tbody><tr><td>기다림</td><td>한가하면 15분, 18시에 주문해 20시에 받은 사례도 → <b>16시 스키 끝나고 17시에 바로 주문</b></td></tr>
+<tr><td>바꿀 수 있는 것</td><td>세트 음료를 맥주↔콜라·사이다로 바꾼 사례. 매장에서 먹고 남은 건 포장해 간 사례</td></tr>
+<tr><td>4명이면</td><td>1세트로 부족. 피자 1판 29,000원 추가(1인 7,250원, 조리 약 1시간) 또는 아래 식당 하나 더</td></tr>
+</tbody></table></div>
+<p class="note">객실로 포장해 가는 것, 순살로 바꾸는 것은 확인 안 됨 → 전화로 물어보기.</p></details>
+
+<p class="note">위 버튼으로 끼니를 고르면 그 시간에 여는 곳만 남음. 치킨·찜닭·피자는 4명이 나눠 먹은 1인 금액. △ = 임시휴무일 수 있음, 가기 전 전화. 영업시간은 네이버·카카오 표기(11/27).</p>
+<h3>식당 지도</h3>
+<div class="mf" id="mf"><button data-m="all" class="on">전체</button><button data-m="17일 점심">17일 점심</button><button data-m="17일 저녁">17일 저녁</button><button data-m="17일 야식">17일 야식</button><button data-m="18일 아침">18일 아침</button><button data-m="18일 귀가 점심">18일 점심</button></div>
+<div class="mf" id="cf"><button data-c="all" class="on">모든 종류</button><button data-c="치킨·피자">치킨·피자</button><button data-c="고기">고기</button><button data-c="한식">한식</button><button data-c="국밥·탕">국밥·탕</button><button data-c="중식">중식</button><button data-c="면·막국수">면·막국수</button><button data-c="버거">버거</button><button data-c="술집">술집</button></div>
+<div class="mf" id="mv"><button data-v="near" class="on">걸어갈 곳 확대</button><button data-v="wide">차로 갈 곳까지 전체</button></div>
+<div class="mapwrap"><div id="fmap"><img id="fimg" src="ev/nmap/food-near-0.png" alt="식당 지도"></div><ol id="flist"></ol></div>
+<p class="note">번호 = 가까운 순 · 주황 = 걸어서 15분 안, 회색 = 차 · 오른쪽 목록을 누르면 카카오맵.</p>
+<div class="tw"><table id="ftab"><thead><tr><th>#</th><th>식당</th><th>가는 법</th><th>메뉴 · 1인</th><th>영업 · 쉬는 시간 · 주문 마감</th><th>끼니</th></tr></thead><tbody><tr data-m="17일 점심|17일 저녁|18일 아침|18일 귀가 점심" data-c="버거"><td>1</td><td><a href="https://m.place.naver.com/restaurant/37297061/home" target="_blank">롯데리아 휘닉스파크점</a><br><small class="ct">버거</small></td><td>단지 안</td><td>세트 8,800(2월 가격)<br><small class="m3">한우불고기버거 9,200 · 데리버거 3,800 · 순살치킨 풀팩(22조각) 17,500</small></td><td>09:00–21:00 · 마감 20:30</td><td class="ml">17 점심 · 17 저녁 · 18 아침 · 18 점심</td></tr><tr data-m="17일 저녁|17일 야식" data-c="치킨·피자"><td>2</td><td><a href="https://m.place.naver.com/restaurant/2034291059/home" target="_blank">노랑통닭 평창휘닉스점</a> <small class="tg">홀 O</small><br><small class="ct">치킨·피자</small></td><td>걸어서 7분 · 차 2분</td><td>알싸한마늘치킨 26,000×2÷4=13,000<br><small class="m3">우도 땅콩 치킨 오리지널(뼈/순살) 24,000 · 우도 땅콩 치킨 콤보(다리+윙+봉) 26,000 · 우도 땅콩 치킨 반 마리(순살) (*추가 주문 시에만 이용 가능) 13,000</small></td><td>15:00–24:00</td><td class="ml">17 저녁 · 17 야식</td></tr><tr data-m="17일 점심|17일 저녁|17일 야식|18일 귀가 점심" data-c="중식"><td>3</td><td><a href="https://m.place.naver.com/restaurant/37822716/home" target="_blank">명가</a><br><small class="ct">중식</small></td><td>걸어서 7분 · 차 2분</td><td>짬뽕 9,000<br><small class="m3">짬뽕 9,000 · 탕수육 (대) 30,000 · 탕수육 (소) 22,000</small></td><td>10:00–24:00</td><td class="ml">17 점심 · 17 저녁 · 17 야식 · 18 점심</td></tr><tr data-m="17일 저녁|17일 야식" data-c="치킨·피자"><td>4</td><td><a href="https://m.place.naver.com/restaurant/1269499000/home" target="_blank">교촌치킨 휘닉스봉평점</a> <small class="tg">포장·배달만</small><br><small class="ct">치킨·피자</small></td><td>걸어서 7분 · 차 2분</td><td>허니콤보 23,000×2÷4=11,500<br><small class="m3">허니콤보 23,000 · 허니순살 23,000 · 레드콤보 23,000</small></td><td>15:00–24:00 · 마감 23:00</td><td class="ml">17 저녁 · 17 야식</td></tr><tr data-m="17일 점심|17일 저녁|18일 귀가 점심" data-c="버거"><td>5</td><td>△ <a href="https://m.place.naver.com/restaurant/99159174/home" target="_blank">딥버거 △</a><br><small class="ct">버거</small></td><td>걸어서 8분 · 차 2분</td><td>딥버거세트 15,000<br><small class="m3">딥버거 10,000 · 치킨버거 10,000 · 버거 세트 14,000</small></td><td>11:00–19:00 · 임시휴무 기간 확인 · 쉼 15:00–16:00 · 마감 18:55</td><td class="ml">17 점심 · 17 저녁 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|18일 귀가 점심" data-c="한식"><td>6</td><td><a href="https://m.place.naver.com/restaurant/2035208381/home" target="_blank">세끼한식뷔페휘</a><br><small class="ct">한식</small></td><td>걸어서 8분 · 차 2분</td><td>성인 한식뷔페 11,000<br><small class="m3">냉동삼겹살 -1 · 셀프라면 -1</small></td><td>10:00–19:00 · 쉼 14:30–16:30 · 마감 14:00/18:30</td><td class="ml">17 점심 · 17 저녁 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|18일 귀가 점심" data-c="고기"><td>7</td><td><a href="https://m.place.naver.com/restaurant/13283678/home" target="_blank">평창한우다래</a><br><small class="ct">고기</small></td><td>걸어서 10분 · 차 4분</td><td>우거지해장국 12,000<br><small class="m3">한우 특수모둠1++ 54,000 · 한우 꽃등심 1++ 52,000 · 한우 모듬 1+이상 48,000</small></td><td>10:00–22:00</td><td class="ml">17 점심 · 17 저녁 · 18 점심</td></tr><tr data-m="17일 저녁|17일 야식" data-c="치킨·피자"><td>8</td><td><a href="https://m.place.naver.com/restaurant/1480983376/home" target="_blank">꼬꼬가돌아왔닭 옛통</a> <small class="tg">홀 O</small><br><small class="ct">치킨·피자</small></td><td>걸어서 12분 · 차 4분</td><td>후라이드18,000+양념19,000=37,000÷4=9,250<br><small class="m3">양념/반반치킨 19,000 · 골뱅이무침 25,000 · 옛날통닭 15,000</small></td><td>15:00–24:00</td><td class="ml">17 저녁 · 17 야식</td></tr><tr data-m="17일 점심|17일 저녁|18일 아침|18일 귀가 점심" data-c="국밥·탕"><td>9</td><td><a href="https://m.place.naver.com/restaurant/1083274522/home" target="_blank">장금이감자탕 휘닉스점</a><br><small class="ct">국밥·탕</small></td><td>걸어서 12분 · 차 4분</td><td>양평해장국 11,000<br><small class="m3">감자탕(대) 45,000 · 해물뼈찜(대) 63,000 · 감자탕(중) 40,000</small></td><td>09:00–20:00</td><td class="ml">17 점심 · 17 저녁 · 18 아침 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|18일 귀가 점심" data-c="고기"><td>10</td><td><a href="https://m.place.naver.com/restaurant/34266454/home" target="_blank">솥뚜껑삼겹도령과 낙지낭자</a><br><small class="ct">고기</small></td><td>걸어서 12분 · 차 4분</td><td>제육볶음12,000+공기밥1,000=13,000<br><small class="m3">무쇠 솥뚜껑 생 삼겹살 (1인분) 15,000 · 고추장 생 삼겹살 (1인분) 15,000 · 목살 (1인분) 15,000</small></td><td>10:00–23:00 · 마감 22:00</td><td class="ml">17 점심 · 17 저녁 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|18일 아침|18일 귀가 점심" data-c="한식"><td>11</td><td><a href="https://m.place.naver.com/restaurant/1857893950/home" target="_blank">광명식당</a><br><small class="ct">한식</small></td><td>걸어서 12분 · 차 4분</td><td>황태해장국 10,000<br><small class="m3">오삼불고기(2인이상) 15,000 · 제육볶음(2인이상) 15,000 · 뚝배기불고기 12,000</small></td><td>08:00–22:00</td><td class="ml">17 점심 · 17 저녁 · 18 아침 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|18일 귀가 점심" data-c="한식"><td>12</td><td><a href="https://m.place.naver.com/restaurant/15552082/home" target="_blank">휘팍샤브샤브</a><br><small class="ct">한식</small></td><td>걸어서 13분 · 차 2분</td><td>소고기샤브 14,900<br><small class="m3">소고기샤브(1인) 14,900 · 미취학아동(1인) 7,500</small></td><td>11:00–22:00</td><td class="ml">17 점심 · 17 저녁 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|17일 야식|18일 귀가 점심" data-c="한식"><td>13</td><td><a href="https://m.place.naver.com/restaurant/1137694640/home" target="_blank">일미리금계찜닭 휘닉스파크점</a><br><small class="ct">한식</small></td><td>걸어서 14분 · 차 2분</td><td>순살금계찜닭 대47,000+밥1,000×4=51,000÷4=12,750<br><small class="m3">야끼우동찜닭 -1 · 트러플 짜장 찜닭 -1 · 마라찜닭 -1</small></td><td>11:00–23:30 · 마감 23:00</td><td class="ml">17 점심 · 17 저녁 · 17 야식 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|17일 야식|18일 귀가 점심" data-c="고기"><td>14</td><td><a href="https://m.place.naver.com/restaurant/1640561050/home" target="_blank">태영생막창 봉평점</a><br><small class="ct">고기</small></td><td>걸어서 15분 · 차 2분</td><td>돼지막창14,000+공기밥1,000=15,000<br><small class="m3">돼지막창 14,000 · 삼겹살 15,000 · 양념막창 14,000</small></td><td>10:00–24:00</td><td class="ml">17 점심 · 17 저녁 · 17 야식 · 18 점심</td></tr><tr data-m="17일 저녁|17일 야식" data-c="치킨·피자"><td>15</td><td><a href="https://m.place.naver.com/restaurant/34346867/home" target="_blank">치킨매니아 한화리조트평창점</a> <small class="tg">홀 O</small><br><small class="ct">치킨·피자</small></td><td>걸어서 14분 · 차 5분</td><td>마일드후라이드22,000×2÷4=11,000<br><small class="m3">치킨에 빠진 새우 -1 · 왕새우치킨 -1 · 왕새우허니치킨 -1</small></td><td>15:30–23:00</td><td class="ml">17 저녁 · 17 야식</td></tr><tr data-m="17일 점심|17일 저녁|18일 귀가 점심" data-c="면·막국수"><td>16</td><td><a href="https://m.place.naver.com/restaurant/15551975/home" target="_blank">묵사발</a><br><small class="ct">면·막국수</small></td><td>차 2분</td><td>메밀물막국수 9,000<br><small class="m3">감자전 10,000 · 메밀물막국수 9,000 · 메밀비빔막국수 9,000</small></td><td>10:00–20:00 · 마감 19:00</td><td class="ml">17 점심 · 17 저녁 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|17일 야식|18일 아침|18일 귀가 점심" data-c="한식"><td>17</td><td><a href="https://m.place.naver.com/restaurant/1092575900/home" target="_blank">정가네맛집</a><br><small class="ct">한식</small></td><td>차 2분</td><td>황태해장국 13,000<br><small class="m3">능이한방토종닭백숙 95,000 · 삼겹살 (200g) 16,000 · 갈비살 (150g) 18,000</small></td><td>06:00–24:00 · 쉼 14:00–15:00</td><td class="ml">17 점심 · 17 저녁 · 17 야식 · 18 아침 · 18 점심</td></tr><tr data-m="17일 저녁|17일 야식" data-c="치킨·피자"><td>18</td><td><a href="https://m.place.naver.com/restaurant/2041720697/home" target="_blank">네네치킨 봉평점</a> <small class="tg">홀 O</small><br><small class="ct">치킨·피자</small></td><td>차 2분</td><td>후라이드22,000×2÷4=11,000<br><small class="m3">야자치킨 23,000 · 스노윙MAXX 23,000 · 어니언스노윙 23,000</small></td><td>15:00–24:00</td><td class="ml">17 저녁 · 17 야식</td></tr><tr data-m="17일 점심|17일 저녁|18일 귀가 점심" data-c="한식"><td>19</td><td><a href="https://m.place.naver.com/restaurant/1317172753/home" target="_blank">무이806능이백숙</a><br><small class="ct">한식</small></td><td>차 3분</td><td>누룽지통닭22,000×2÷4=11,000<br><small class="m3">능이 닭/오리백숙 90,000 · 능이삼계탕 20,000 · 능이 반마리 백숙 50,000</small></td><td>11:00–22:00 · 마감 21:30</td><td class="ml">17 점심 · 17 저녁 · 18 점심</td></tr><tr data-m="17일 저녁" data-c="치킨·피자"><td>20</td><td><a href="https://m.place.naver.com/restaurant/1561638030/home" target="_blank">오구피자 평창휘닉스점</a> <small class="tg">포장·배달만</small><br><small class="ct">치킨·피자</small></td><td>차 2분</td><td>콤비네이션 L12,900×2÷4=6,450<br><small class="m3">반미터 콤비네이션피자 19,000 · 반미터 포테이토피자 20,000 · 반미터 불고기피자 21,000</small></td><td>15:00–22:00 · 마감 21:30</td><td class="ml">17 저녁</td></tr><tr data-m="17일 점심|17일 저녁|18일 아침|18일 귀가 점심" data-c="한식"><td>21</td><td><a href="https://m.place.naver.com/restaurant/15551915/home" target="_blank">삼성우렁촌</a><br><small class="ct">한식</small></td><td>차 2분</td><td>우렁쌈밥정식 14,000(2인 이상)<br><small class="m3">우렁쌈밥정식 14,000 · 삼겹살 14,000 · 닭도리탕 45,000</small></td><td>09:00–20:30 · 쉼 15:30–17:00 · 마감 20:00</td><td class="ml">17 점심 · 17 저녁 · 18 아침 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|18일 아침|18일 귀가 점심" data-c="한식"><td>22</td><td><a href="https://m.place.naver.com/restaurant/21278678/home" target="_blank">미락식당</a><br><small class="ct">한식</small></td><td>차 3분</td><td>청국장 또는 얼큰순두부 10,000<br><small class="m3">묵은지 김치찜 26,000 · 오삼불고기 26,000 · 메뉴가격 -1</small></td><td>09:00–21:00</td><td class="ml">17 점심 · 17 저녁 · 18 아침 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|18일 귀가 점심" data-c="중식"><td>23</td><td><a href="https://m.place.naver.com/restaurant/13580550/home" target="_blank">태양반점</a><br><small class="ct">중식</small></td><td>차 3분</td><td>짬뽕 또는 볶음밥 9,000<br><small class="m3">짜장 7,000 · 탕수육(소) 20,000 · 짬뽕 9,000</small></td><td>10:00–21:00</td><td class="ml">17 점심 · 17 저녁 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|18일 아침|18일 귀가 점심" data-c="한식"><td>24</td><td><a href="https://m.place.naver.com/restaurant/15551902/home" target="_blank">뜰안채</a><br><small class="ct">한식</small></td><td>차 3분</td><td>보리밥 또는 바지락칼국수 10,000<br><small class="m3">바지락 칼국수 (2인이상) 10,000 · 얼큰이 칼국수 (2인이상) 10,000 · 콩국수 (1인분) 10,000</small></td><td>08:00–20:00</td><td class="ml">17 점심 · 17 저녁 · 18 아침 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|18일 귀가 점심" data-c="한식"><td>25</td><td><a href="https://m.place.naver.com/restaurant/1437337146/home" target="_blank">안선생</a><br><small class="ct">한식</small></td><td>차 3분</td><td>황태국밥 10,000<br><small class="m3">쭈꾸미볶음(2인) 30,000 · 코다리조림 12,000 · 콩나물국밥 7,000</small></td><td>10:00–20:00 · 마감 19:30</td><td class="ml">17 점심 · 17 저녁 · 18 점심</td></tr><tr data-m="17일 저녁|17일 야식" data-c="치킨·피자"><td>26</td><td><a href="https://m.place.naver.com/restaurant/897964644/home" target="_blank">처갓집양념치킨 휘닉스파크점</a> <small class="tg">홀 모름</small><br><small class="ct">치킨·피자</small></td><td>차 3분</td><td>후라이드21,000×2÷4=10,500<br><small class="m3">K-마라 양념치킨 19,000 · 꼬꼬뱅 양념치킨 19,000 · 꼬꼬뱅 슈프림양념치킨 19,000</small></td><td>15:00–24:00</td><td class="ml">17 저녁 · 17 야식</td></tr><tr data-m="17일 점심|17일 저녁|18일 아침|18일 귀가 점심" data-c="국밥·탕"><td>27</td><td><a href="https://m.place.naver.com/restaurant/2055112518/home" target="_blank">병천청년순대 휘닉스파크점</a><br><small class="ct">국밥·탕</small></td><td>차 3분</td><td>순대국 N9,000·K10,000; 밥1,000 추가해도 최대11,000<br><small class="m3">국밥정식 11,000 · 냉면정식 14,000 · 순대국밥 10,000</small></td><td>07:00–20:00</td><td class="ml">17 점심 · 17 저녁 · 18 아침 · 18 점심</td></tr><tr data-m="17일 저녁|17일 야식|18일 귀가 점심" data-c="치킨·피자"><td>28</td><td><a href="https://m.place.naver.com/restaurant/1779996498/home" target="_blank">BHC치킨 봉평휘닉스점</a> <small class="tg">포장·배달만</small><br><small class="ct">치킨·피자</small></td><td>차 3분</td><td>뿌링클21,000×2÷4=10,500<br><small class="m3">반반치킨(후라이드/양념킹) 한마리 22,900 · 반반치킨(후라이드/양념킹) 순살 25,900 · 커링클 한마리 21,900</small></td><td>14:30–23:30</td><td class="ml">17 저녁 · 17 야식 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|18일 귀가 점심" data-c="중식"><td>29</td><td><a href="https://m.place.naver.com/restaurant/1275529876/home" target="_blank">호승반점</a><br><small class="ct">중식</small></td><td>차 3분</td><td>유니짜장 8,000 / 짬뽕 10,000<br><small class="m3">유니짜장 -1 · 고기짬뽕 -1 · 탕수육 -1</small></td><td>11:00–20:00 · 쉼 평일 시간 미확인(N주말 없음)</td><td class="ml">17 점심 · 17 저녁 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|18일 아침|18일 귀가 점심" data-c="국밥·탕"><td>30</td><td><a href="https://m.place.naver.com/restaurant/30900007/home" target="_blank">소한마리국밥</a><br><small class="ct">국밥·탕</small></td><td>차 3분</td><td>한우시래기국밥 N12,000·K13,000 →13,000<br><small class="m3">소머리국밥 16,000 · 한우시래기국밥 13,000 · 소머리국밥 (특) 20,000</small></td><td>08:30–21:00 · 쉼 14:00–16:30</td><td class="ml">17 점심 · 17 저녁 · 18 아침 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁" data-c="한식"><td>31</td><td><a href="https://m.place.naver.com/restaurant/19392097/home" target="_blank">덕고식당</a><br><small class="ct">한식</small></td><td>차 3분</td><td>황태칼국수 9,000<br><small class="m3">오삼불고기 13,000 · 칼만두전골 8,000 · 김치짜글이 9,000</small></td><td>11:00–22:00 · 쉼 13:00–17:00 · 마감 20:00</td><td class="ml">17 점심 · 17 저녁</td></tr><tr data-m="17일 점심|17일 저녁|17일 야식|18일 귀가 점심" data-c="고기"><td>32</td><td><a href="https://m.place.naver.com/restaurant/1406996231/home" target="_blank">기분좋은날</a><br><small class="ct">고기</small></td><td>차 3분</td><td>얼큰샤브샤브 14,000<br><small class="m3">풍천 민물 장어 (생물 1마리, 330g) 29,000 · 한돈 삼겹살(200g) 16,000 · 대구 돼지막창(200g) 15,000</small></td><td>11:30–23:00 · 쉼 15:00–17:00</td><td class="ml">17 점심 · 17 저녁 · 17 야식 · 18 점심</td></tr><tr data-m="17일 저녁|17일 야식" data-c="치킨·피자"><td>33</td><td><a href="https://m.place.naver.com/restaurant/2022856479/home" target="_blank">BBQ 평창휘닉스파크점</a> <small class="tg">홀 모름</small><br><small class="ct">치킨·피자</small></td><td>차 4분</td><td>황금올리브치킨23,000×2÷4=11,500<br><small class="m3">TOP3세트메뉴 Set1 29,000 · TOP3세트메뉴 Set2 30,000 · TOP3세트메뉴 Set3 30,000</small></td><td>17:30–23:00</td><td class="ml">17 저녁 · 17 야식</td></tr><tr data-m="17일 점심|17일 저녁|17일 야식|18일 귀가 점심" data-c="술집"><td>34</td><td><a href="https://m.place.naver.com/restaurant/1085645136/home" target="_blank">탑포차</a><br><small class="ct">술집</small></td><td>차 4분</td><td>떡만둣국 8,000</td><td>10:00–익일 02:00</td><td class="ml">17 점심 · 17 저녁 · 17 야식 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|18일 귀가 점심" data-c="한식"><td>35</td><td><a href="https://m.place.naver.com/restaurant/1996812391/home" target="_blank">인생맛집</a><br><small class="ct">한식</small></td><td>차 3분</td><td>인생백반 9,000<br><small class="m3">간장게장정식 (1인분) 25,000 · 고등어구이 15,000 · 제육볶음(2인) 26,000</small></td><td>11:00–20:30 · 쉼 15:00–17:00</td><td class="ml">17 점심 · 17 저녁 · 18 점심</td></tr><tr data-m="18일 아침|18일 귀가 점심" data-c="국밥·탕"><td>36</td><td><a href="https://m.place.naver.com/restaurant/11863167/home" target="_blank">산채랑황태랑</a><br><small class="ct">국밥·탕</small></td><td>차 3분</td><td>황태해장국 10,000<br><small class="m3">황태구이 15,000 · 황태해장국 10,000 · 황태전골(중) 45,000</small></td><td>08:30–19:30</td><td class="ml">18 아침 · 18 점심</td></tr><tr data-m="17일 저녁|17일 야식" data-c="치킨·피자"><td>37</td><td><a href="https://m.place.naver.com/restaurant/2087786095/home" target="_blank">자연임실치즈피자 봉평점</a> <small class="tg">홀 O</small><br><small class="ct">치킨·피자</small></td><td>차 4분</td><td>콤비네이션 L24,900×2÷4=12,450<br><small class="m3">한입핫도그 -1 · 스프라이트 -1 · 크림치즈크러스트 -1</small></td><td>16:00–23:30 · 마감 23:25</td><td class="ml">17 저녁 · 17 야식</td></tr><tr data-m="17일 저녁" data-c="고기"><td>38</td><td><a href="https://m.place.naver.com/restaurant/1673964976/home" target="_blank">1997동굴갈비</a><br><small class="ct">고기</small></td><td>차 10분</td><td>한우국밥 11,000<br><small class="m3">동굴 소 양념갈비 39,000 · 한돈 돼지왕갈비 21,000 · 동굴 소 생갈비 45,000</small></td><td>16:00–21:30 · 마감 21:00</td><td class="ml">17 저녁</td></tr><tr data-m="17일 점심|17일 저녁|18일 귀가 점심" data-c="국밥·탕"><td>39</td><td><a href="https://m.place.naver.com/restaurant/2036886096/home" target="_blank">양푼이우거지동태탕 휘닉스점</a><br><small class="ct">국밥·탕</small></td><td>차 3분</td><td>동태탕8,000+공기밥1,000=9,000<br><small class="m3">동태탕 8,000 · 알탕 10,000 · 고등어구이 12,000</small></td><td>08:00–19:30 · 마감 19:00</td><td class="ml">17 점심 · 17 저녁 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|18일 아침|18일 귀가 점심" data-c="한식"><td>40</td><td><a href="https://m.place.naver.com/restaurant/1564051020/home" target="_blank">향수식당</a><br><small class="ct">한식</small></td><td>차 3분</td><td>뼈해장국 12,000<br><small class="m3">시래기감자탕 대 48,000 · 왕갈비탕 15,000 · 뼈해장국 12,000</small></td><td>09:00–20:00</td><td class="ml">17 점심 · 17 저녁 · 18 아침 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|18일 아침|18일 귀가 점심" data-c="한식"><td>41</td><td><a href="https://m.place.naver.com/restaurant/15551611/home" target="_blank">전주식당</a><br><small class="ct">한식</small></td><td>차 3분</td><td>황태해장국 13,000 / 김치찌개12,000<br><small class="m3">황태구이정식 17,000 · 고등어구이정식 19,000 · 자연산 버섯전골(중) 45,000</small></td><td>06:00–21:00</td><td class="ml">17 점심 · 17 저녁 · 18 아침 · 18 점심</td></tr><tr data-m="17일 저녁" data-c="고기"><td>42</td><td><a href="https://m.place.naver.com/restaurant/776503507/home" target="_blank">코지화로구이</a><br><small class="ct">고기</small></td><td>차 5분</td><td>갈비탕 12,000 / 곤드레밥10,000<br><small class="m3">돼지갈비 17,000 · 곤드레밥 10,000 · 갈비탕 12,000</small></td><td>16:00–21:00</td><td class="ml">17 저녁</td></tr><tr data-m="17일 점심|18일 귀가 점심" data-c="한식"><td>43</td><td><a href="https://m.place.naver.com/restaurant/15782890/home" target="_blank">김가네손만두국</a><br><small class="ct">한식</small></td><td>차 5분</td><td>손만두국 10,000<br><small class="m3">손만두국 10,000 · 떡만두국 10,000 · 뚝배기비빔밥 10,000</small></td><td>10:00–14:00</td><td class="ml">17 점심 · 18 점심</td></tr><tr data-m="17일 저녁|17일 야식" data-c="술집"><td>44</td><td><a href="https://m.place.naver.com/restaurant/1847846301/home" target="_blank">퓨전선술집</a><br><small class="ct">술집</small></td><td>차 5분</td><td>후라이드20,000×2÷4=10,000<br><small class="m3">닭볶음탕 35,000 · 알탕 28,000 · 수제어묵탕 22,000</small></td><td>17:30–익일 02:00</td><td class="ml">17 저녁 · 17 야식</td></tr><tr data-m="17일 점심|17일 저녁|18일 아침|18일 귀가 점심" data-c="국밥·탕"><td>45</td><td><a href="https://m.place.naver.com/restaurant/15551407/home" target="_blank">송원해장국막국수</a><br><small class="ct">국밥·탕</small></td><td>차 6분</td><td>황태해장국 12,000<br><small class="m3">황태해장국 12,000 · 곰탕 15,000 · 뼈다귀해장국 12,000</small></td><td>07:00–19:00 · 쉼 15:00–16:30</td><td class="ml">17 점심 · 17 저녁 · 18 아침 · 18 점심</td></tr><tr data-m="17일 점심|18일 아침|18일 귀가 점심" data-c="한식"><td>46</td><td><a href="https://m.place.naver.com/restaurant/1705750974/home" target="_blank">면온식당</a><br><small class="ct">한식</small></td><td>차 6분</td><td>황태해장국·육개장·해물순두부 각12,000<br><small class="m3">황태해장국 9,000 · 해물순두부 9,000 · 육개장 10,000</small></td><td>07:00–15:00</td><td class="ml">17 점심 · 18 아침 · 18 점심</td></tr><tr data-m="17일 점심|18일 귀가 점심" data-c="한식"><td>47</td><td><a href="https://m.place.naver.com/restaurant/11479224/home" target="_blank">메밀꽃필무렵</a><br><small class="ct">한식</small></td><td>차 9분</td><td>메밀물국수 12,000<br><small class="m3">간장나물메밀국수(비빔) 16,000 · 수제메밀묵 14,000 · 메밀물국수 12,000</small></td><td>09:30–16:30 · 마감 16:00</td><td class="ml">17 점심 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|18일 아침|18일 귀가 점심" data-c="국밥·탕"><td>48</td><td><a href="https://m.place.naver.com/restaurant/15550239/home" target="_blank">황태명가</a><br><small class="ct">국밥·탕</small></td><td>차 10분</td><td>황태해장국 12,000<br><small class="m3">황태구이솥밥정식 17,000 · 황태해장국 12,000 · 곤드레돌솥밥 12,000</small></td><td>09:00–21:00</td><td class="ml">17 점심 · 17 저녁 · 18 아침 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|18일 귀가 점심" data-c="면·막국수"><td>49</td><td><a href="https://m.place.naver.com/restaurant/15550448/home" target="_blank">원미식당</a><br><small class="ct">면·막국수</small></td><td>차 10분</td><td>메밀막국수 9,000<br><small class="m3">순메밀막국수 12,000 · 메밀 물,비빔막국수 9,000 · 메밀묵사발 8,000</small></td><td>10:30–20:00 · 쉼 없음(B2026-10-09)</td><td class="ml">17 점심 · 17 저녁 · 18 점심</td></tr><tr data-m="17일 저녁|17일 야식|18일 귀가 점심" data-c="치킨·피자"><td>50</td><td><a href="https://m.place.naver.com/restaurant/1519298209/home" target="_blank">자담치킨 강원봉평점</a> <small class="tg">홀 O</small><br><small class="ct">치킨·피자</small></td><td>차 9분</td><td>후라이드21,000×2÷4=10,500<br><small class="m3">왓더핫치킨 -1 · 허니팝치킨 -1 · 소떡소떡 -1</small></td><td>13:00–23:00</td><td class="ml">17 저녁 · 17 야식 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|18일 귀가 점심" data-c="면·막국수"><td>51</td><td><a href="https://m.place.naver.com/restaurant/15782116/home" target="_blank">동이네막국수</a><br><small class="ct">면·막국수</small></td><td>차 10분</td><td>왕갈비탕 15,000 / 메밀묵사발11,000<br><small class="m3">왕갈비탕 15,000 · 메밀비빔막국수(1인) 10,000 · 메밀물막국수(1인) 10,000</small></td><td>11:00–20:00</td><td class="ml">17 점심 · 17 저녁 · 18 점심</td></tr><tr data-m="17일 점심|17일 저녁|18일 귀가 점심" data-c="국밥·탕"><td>52</td><td><a href="https://m.place.naver.com/restaurant/2006753771/home" target="_blank">황금코다리 평창봉평점</a><br><small class="ct">국밥·탕</small></td><td>차 10분</td><td>코다리조림 대(4인)56,000+밥1,000×4=60,000÷4=15,000<br><small class="m3">코다리&amp;해물조림(소)(2인) 42,000 · 코다리&amp;갈비조림(소)(2인) 38,000 · 코다리조림(중)(3인) 40,000</small></td><td>11:00–21:00 · 쉼 15:00–17:00 · 마감 20:30</td><td class="ml">17 점심 · 17 저녁 · 18 점심</td></tr><tr data-m="17일 저녁" data-c="한식"><td>–</td><td><a href="https://m.place.naver.com/restaurant/1350999798/home" target="_blank">리에토</a><br><small class="ct">한식</small></td><td>걸어서 7분 · 차 4분</td><td>추가 피자 7,250(29,000÷4; 패키지 치킨 별도)</td><td>17:00–22:00 · 마감 21:00</td><td class="ml">17 저녁</td></tr><tr data-m="17일 점심|17일 저녁|17일 야식|18일 아침|18일 귀가 점심" data-c="한식"><td>–</td><td><a href="https://m.place.naver.com/restaurant/2036354908/home" target="_blank">든든밥상</a><br><small class="ct">한식</small></td><td>차 4분</td><td>오리국밥 9,000</td><td>09:00–24:00</td><td class="ml">17 점심 · 17 저녁 · 17 야식 · 18 아침 · 18 점심</td></tr></tbody></table></div>
+<button id="fmore" class="more"></button>
+</div></section>
+
+<section class="step" id="d2"><div class="t"><b>12.18</b><span>블루캐니언 · 퇴실</span></div><div>
+<h2>블루캐니언은 10시에 연다</h2>
+<ol class="time">
+<li><b>08:00</b><span>아침, 늦으면 09시 (식당 표 "18 아침")</span></li>
+<li><b>09:30</b><span>짐 정리, 차에 싣기</span></li>
+<li class="hl"><b>10:00</b><span>블루캐니언 입장 (본 건물 1층 매표소) — 4명 모두 <b>수영복 각자 챙기기, 대여 없음</b></span></li>
+<li><b>12:00</b><span>나와서 씻고 객실 마무리</span></li>
+<li class="hl"><b>13:00</b><span>퇴실 (패키지 레이트 체크아웃)</span></li>
+<li><b>13:30</b><span>귀가 점심 (식당 표 "18 점심")</span></li>
+</ol>
+<h3>귀가길 — 몇 시에 출발하나</h3>
+<div class="tw"><table><thead><tr><th>휘닉스 출발</th><th>수원역까지</th><th>계산역까지 (수원 거쳐)</th></tr></thead><tbody>
+<tr><td><b>13:00</b></td><td><b>2시간 14분</b></td><td><b>3시간 41분</b></td></tr>
+<tr><td>14:00</td><td>2시간 41분</td><td>4시간 17분</td></tr>
+<tr><td>15:00</td><td>3시간 1분</td><td>4시간 35분</td></tr>
+</tbody></table></div>
+<p class="note"><b>13시대에 바로 출발할수록 덜 막힘.</b> 점심을 앉아서 먹고 15시에 나가면 수원까지 약 47분 더 걸림 → 점심은 13시 전후 빠르게 먹거나 출발 후 휴게소. 네이버 지도 12/18 출발 예측(11/27 조회), 식사·정차 시간 제외. 당일 아침 다시 확인.</p>
+
+<figure class="nmap"><a href="ev/nmap/bluecanyon-walk.png" target="_blank" title="누르면 크게"><img src="ev/nmap/bluecanyon-walk.png" alt="숙소에서 블루캐니언 가는 길"></a></figure>
+<h3>블루캐니언 안에서</h3>
+<figure class="flow"><svg viewBox="0 0 760 300" role="img" aria-label="블루캐니언 입장 순서" font-family="inherit">
+<text x="12" y="0" font-size="0"> </text>
+<line x1="70" y1="118" x2="690" y2="118" stroke="#16202e" stroke-width="2"/>
+<path d="M684 112l10 6-10 6" fill="none" stroke="#16202e" stroke-width="2"/>
+<g transform="translate(0,0)">
+<circle cx="70" cy="118" r="17" fill="#c2410c"/><text x="70" y="124" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">1</text>
+<g transform="translate(40,20)" fill="none" stroke="#16202e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="14" width="56" height="34"/><path d="M42 14v34" stroke-dasharray="3 4"/><path d="M10 26h22M10 36h16"/></g>
+<text x="70" y="168" text-anchor="middle" font-size="17" font-weight="800" fill="#16202e">매표소</text>
+<text x="70" y="192" text-anchor="middle" font-size="13.5" fill="#6b7280">본 건물 1층</text>
+<text x="70" y="211" text-anchor="middle" font-size="13.5" fill="#6b7280">정문 왼쪽 · QR 보여주기</text></g>
+<g transform="translate(155,0)">
+<circle cx="70" cy="118" r="17" fill="#16202e"/><text x="70" y="124" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">2</text>
+<g transform="translate(40,20)" fill="none" stroke="#16202e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="34" height="56"/><rect x="13" y="14" width="20" height="20"/><path d="M17 18h4v4h-4zM25 26h4v4h-4zM14 44h18"/></g>
+<text x="70" y="168" text-anchor="middle" font-size="17" font-weight="800" fill="#16202e">번호 티켓</text>
+<text x="70" y="192" text-anchor="middle" font-size="13.5" fill="#6b7280">락카 번호 적힌</text>
+<text x="70" y="211" text-anchor="middle" font-size="13.5" fill="#6b7280">티켓으로 교환</text></g>
+<g transform="translate(310,0)">
+<circle cx="70" cy="118" r="17" fill="#16202e"/><text x="70" y="124" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">3</text>
+<g transform="translate(40,20)" fill="none" stroke="#16202e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="52" height="52"/><path d="M4 24h52M4 42h52M30 6v52"/><circle cx="24" cy="15" r="1.6" fill="#16202e"/><circle cx="50" cy="33" r="1.6" fill="#c2410c" stroke="#c2410c"/></g>
+<text x="70" y="168" text-anchor="middle" font-size="17" font-weight="800" fill="#16202e">신발장</text>
+<text x="70" y="192" text-anchor="middle" font-size="13.5" fill="#6b7280">티켓과 같은 번호</text>
+<text x="70" y="211" text-anchor="middle" font-size="13.5" fill="#6b7280">신발 넣고 키 빼기</text></g>
+<g transform="translate(465,0)">
+<circle cx="70" cy="118" r="17" fill="#16202e"/><text x="70" y="124" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">4</text>
+<g transform="translate(40,20)" fill="none" stroke="#16202e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="2" width="36" height="58"/><path d="M12 30h36"/><circle cx="40" cy="16" r="2.2"/><circle cx="40" cy="44" r="2.2"/><path d="M22 12h8M22 40h8"/></g>
+<text x="70" y="168" text-anchor="middle" font-size="17" font-weight="800" fill="#16202e">남자 탈의실</text>
+<text x="70" y="192" text-anchor="middle" font-size="13.5" fill="#6b7280">1층 · 신발장 쪽</text>
+<text x="70" y="211" text-anchor="middle" font-size="13.5" fill="#6b7280">같은 번호 락카</text></g>
+<g transform="translate(620,0)">
+<circle cx="70" cy="118" r="17" fill="#c2410c"/><text x="70" y="124" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">5</text>
+<g transform="translate(40,20)" fill="none" stroke="#16202e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 30c8-6 14-6 22 0s14 6 22 0 10-5 14-2"/><path d="M2 44c8-6 14-6 22 0s14 6 22 0 10-5 14-2"/><path d="M40 4v20M52 4v20M40 10h12M40 18h12"/></g>
+<text x="70" y="168" text-anchor="middle" font-size="17" font-weight="800" fill="#16202e">실내존</text>
+<text x="70" y="192" text-anchor="middle" font-size="13.5" fill="#6b7280">파도풀 · 유수풀</text>
+<text x="70" y="211" text-anchor="middle" font-size="13.5" fill="#6b7280">스파 · 발한실</text></g>
+<rect x="10" y="238" width="740" height="52" fill="#f6f1e9" stroke="none"/>
+<text x="28" y="261" font-size="14.5" font-weight="800" fill="#c2410c">나갈 때</text>
+<text x="100" y="261" font-size="14.5" fill="#16202e">락카 키로 먹고 쓴 것 → 정산소에서 한꺼번에 결제 → 신발장 열림 (정산 안 하면 안 열림)</text>
+<text x="100" y="281" font-size="13" fill="#6b7280">한 번 나가면 다시 못 들어옴 · 지급 수건은 락카 안에서만</text>
+</svg><figcaption>공식 이용안내 + 2024-12·2026 후기 기준</figcaption></figure>
+<div class="g4 bcp"><figure><a href="ev/bc/bc-indoor-map.jpg" target="_blank"><img src="ev/bc/bc-indoor-map.jpg" alt="실내존 안내판 — 풀·스파 위치"></a><figcaption>실내존 안내판 — 풀·스파 위치</figcaption></figure><figure><a href="ev/bc/bc-guide.jpg" target="_blank"><img src="ev/bc/bc-guide.jpg" alt="입구 이용 안내"></a><figcaption>입구 이용 안내</figcaption></figure><figure><a href="ev/bc/bc-ticket.jpg" target="_blank"><img src="ev/bc/bc-ticket.jpg" alt="② 락카 번호 티켓"></a><figcaption>② 락카 번호 티켓</figcaption></figure><figure><a href="ev/bc/bc-shoe.jpg" target="_blank"><img src="ev/bc/bc-shoe.jpg" alt="③ 신발장 (티켓 번호와 같은 칸)"></a><figcaption>③ 신발장 (티켓 번호와 같은 칸)</figcaption></figure></div>
+<p class="note">사진: <a href="https://m.blog.naver.com/manysilver_23/224425313893" target="_blank">블루캐니언 후기 (2026-09)</a> · 누르면 크게. 여자 락카 표시는 무시</p>
+<figure class="nmap"><a href="ev/nmap/bluecanyon-winter.png" target="_blank" title="누르면 크게"><img src="ev/nmap/bluecanyon-winter.png" alt="블루캐니언 겨울 운영"></a><figcaption>12월 운영: 실내만. 초록 = 성인이 쓸 곳, 회색 = 운영 안 함·어린이용. 실외존(야외 노천탕 포함)은 전부 닫힘 — 공식 실시간 운영현황, 11/27 확인.</figcaption></figure>
+<div class="wx"><b>블루캐니언 지금 운영 (공식)</b> <small>11/27 23:53 자동 확인 · 12/18 아침에 다시 갱신</small>
+<table><tr><td>실내</td><td><b class="ok">파도풀 · 개구리풀 · 유아풀 · 바데풀 · 유수풀 · 이벤트 스파 · 실내 발한실</b> <small>(닫힘: 바디 슬라이드 1 · 바디 슬라이드 2)</small></td></tr><tr><td>실외</td><td><b class="no">전부 닫힘</b> / <b class="no">전부 닫힘</b></td></tr></table>
+<small>출처: <a href="https://www.phoenixhnr.co.kr/static/pyeongchang/waterpark/intro" target="_blank">블루캐니언 실시간 운영현황</a></small></div>
+<ul class="pt">
+<li>물·음료는 가지고 들어갈 수 있음</li>
+<li>풀에서 쓸 비치타월은 대여 4,000원(보증금 3,000)</li>
+<li>아쿠아슈즈 권장(선택). 샤워실에 샴푸·바디워시·수건·드라이기 있음, 수영복 탈수기는 없었음 → <b>젖은 수영복 담을 비닐봉지</b></li>
+<li><b>겨울엔 실내만</b> — 슬라이드·야외는 닫힘. 바뀔 수 있으니 당일 확인(033-330-3200)</li>
+</ul>
+</div></section>
+
+<section class="step" id="t" data-until="2026-12-17T22:00"><div class="t"><b>초보 팁</b><span>영상 · 넘어지기 · 리프트</span></div><div>
+<div class="ill"><figure><img src="ev/illust/01-a-stop.png" alt="A자 멈추기"><figcaption><b>A자 멈추기</b>앞코 붙이고 뒤꼬리 밀기</figcaption></figure><figure><img src="ev/illust/02-fall.png" alt="넘어질 때"><figcaption><b>넘어질 때</b>폴 놓고 옆으로 앉기</figcaption></figure><figure><img src="ev/illust/03-get-up.png" alt="일어날 때"><figcaption><b>일어날 때</b>스키를 경사와 가로로</figcaption></figure><figure><img src="ev/illust/04-lift-on.png" alt="리프트 탈 때"><figcaption><b>리프트 탈 때</b>11자로 서서 뒤 보며 앉기</figcaption></figure><figure><img src="ev/illust/05-lift-off.png" alt="리프트 내릴 때"><figcaption><b>리프트 내릴 때</b>일어서서 밀려 나가기</figcaption></figure></div>
+
+<h2>A자로 못 멈추면 리프트 타지 않기</h2>
+<div class="say">순서: 평지에서 한 발 걷기 → 넘어지고 일어나기 → A자로 멈추기. 이게 되면 스패로우 리프트.</div>
+<h3>영상으로 보기 — 누르면 그 장면부터 재생</h3>
+<p class="note"><b>1~5번은 꼭.</b></p>
+<div class="vg"><a class="vc" href="https://www.youtube.com/watch?v=02Mk_N4CWtw&t=554s" target="_blank"><span class="th" style="background-image:url(https://i.ytimg.com/vi/02Mk_N4CWtw/mqdefault.jpg)"><i>▶</i><em>9:14</em><u>꼭</u></span><b>1. A자로 멈추기</b><small>못 하면 리프트 금지</small></a><a class="vc" href="https://www.youtube.com/watch?v=XVcwkTPJJ-o&t=121s" target="_blank"><span class="th" style="background-image:url(https://i.ytimg.com/vi/XVcwkTPJJ-o/mqdefault.jpg)"><i>▶</i><em>2:01</em><u>꼭</u></span><b>2. 넘어지는 법</b><small>제일 먼저 배울 것</small></a><a class="vc" href="https://www.youtube.com/watch?v=XVcwkTPJJ-o&t=166s" target="_blank"><span class="th" style="background-image:url(https://i.ytimg.com/vi/XVcwkTPJJ-o/mqdefault.jpg)"><i>▶</i><em>2:46</em><u>꼭</u></span><b>3. 일어나기</b><small>스키를 경사와 가로로</small></a><a class="vc" href="https://www.youtube.com/watch?v=V5jVyKNPCys&t=0s" target="_blank"><span class="th" style="background-image:url(https://i.ytimg.com/vi/V5jVyKNPCys/mqdefault.jpg)"><i>▶</i><em>0:00</em><u>꼭</u></span><b>4. 리프트 타기</b><small>11자로 서서 뒤 보며 앉기</small></a><a class="vc" href="https://www.youtube.com/watch?v=V5jVyKNPCys&t=96s" target="_blank"><span class="th" style="background-image:url(https://i.ytimg.com/vi/V5jVyKNPCys/mqdefault.jpg)"><i>▶</i><em>1:36</em><u>꼭</u></span><b>5. 리프트 내리기</b><small>밀어주는 대로 미끄러지기</small></a><a class="vc" href="https://www.youtube.com/watch?v=3P_zMPfltUk&t=145s" target="_blank"><span class="th" style="background-image:url(https://i.ytimg.com/vi/3P_zMPfltUk/mqdefault.jpg)"><i>▶</i><em>2:25</em></span><b>6. 다치지 않게 넘어지기</b><small>의사 설명 · 손 짚지 않기</small></a><a class="vc" href="https://www.youtube.com/watch?v=V5jVyKNPCys&t=295s" target="_blank"><span class="th" style="background-image:url(https://i.ytimg.com/vi/V5jVyKNPCys/mqdefault.jpg)"><i>▶</i><em>4:55</em></span><b>7. 뒤로 앉으면 안 멈춤</b><small>정강이를 부츠 앞에</small></a><a class="vc" href="https://www.youtube.com/watch?v=02Mk_N4CWtw&t=345s" target="_blank"><span class="th" style="background-image:url(https://i.ytimg.com/vi/02Mk_N4CWtw/mqdefault.jpg)"><i>▶</i><em>5:45</em></span><b>8. 평지에서 한 발 걷기</b><small>킥보드처럼 밀기</small></a><a class="vc" href="https://www.youtube.com/watch?v=1ykvzpoJ7bc&t=104s" target="_blank"><span class="th" style="background-image:url(https://i.ytimg.com/vi/1ykvzpoJ7bc/mqdefault.jpg)"><i>▶</i><em>1:44</em></span><b>9. 부츠 신기</b><small>버클 다 풀고 텅 젖히기</small></a><a class="vc" href="https://www.youtube.com/watch?v=XVcwkTPJJ-o&t=52s" target="_blank"><span class="th" style="background-image:url(https://i.ytimg.com/vi/XVcwkTPJJ-o/mqdefault.jpg)"><i>▶</i><em>0:52</em></span><b>10. 바인딩 끼우기</b><small>밑창 눈 털고 앞코 먼저</small></a><a class="vc" href="https://www.youtube.com/watch?v=XVcwkTPJJ-o&t=391s" target="_blank"><span class="th" style="background-image:url(https://i.ytimg.com/vi/XVcwkTPJJ-o/mqdefault.jpg)"><i>▶</i><em>6:31</em></span><b>11. A자 턴</b><small>반대쪽 발에 체중</small></a><a class="vc" href="https://www.youtube.com/watch?v=e2o3ypKrOjI&t=553s" target="_blank"><span class="th" style="background-image:url(https://i.ytimg.com/vi/e2o3ypKrOjI/mqdefault.jpg)"><i>▶</i><em>9:13</em></span><b>12. 슬로프에서 쉬는 곳</b><small>가장자리로</small></a><a class="vc" href="https://www.youtube.com/watch?v=02Mk_N4CWtw&t=232s" target="_blank"><span class="th" style="background-image:url(https://i.ytimg.com/vi/02Mk_N4CWtw/mqdefault.jpg)"><i>▶</i><em>3:52</em></span><b>13. 폴 잡는 법</b><small>끈과 손잡이 같이 쥐기</small></a><a class="vc" href="https://www.youtube.com/watch?v=1ykvzpoJ7bc&t=313s" target="_blank"><span class="th" style="background-image:url(https://i.ytimg.com/vi/1ykvzpoJ7bc/mqdefault.jpg)"><i>▶</i><em>5:13</em></span><b>14. 스노가드는 부츠 바깥</b><small>정강이 안 아프게</small></a></div>
+<h3>렌탈·부츠</h3>
+<ul class="pt">
+<li>부츠는 버클을 끝까지 풀고 텅을 앞으로 젖혀 신기. 바지 안 스노가드는 <b>부츠 바깥</b>을 덮게</li>
+<li>스키 길이는 키보다 15~20cm 짧게. 몸무게를 말하고 DIN(바인딩 세기) 맞춰 달라고 하기</li>
+<li>리프트 기다릴 때·타는 동안 버클을 살짝 풀어 두면 발이 덜 저림</li>
+<li>부츠가 아프거나 저리거나 헐거우면 참지 말고 대여소에서 바꾸기</li>
+<li>헬멧은 받은 자리에서 써 보고 턱끈·렌즈가 맞는지 확인</li>
+</ul>
+<h3>넘어지기·멈추기</h3>
+<ul class="pt">
+<li>넘어질 것 같으면 <b>폴 놓고 옆으로 앉으며</b> 넘어지기. 손으로 땅 짚지 않기(손목), 무릎 펴고 버티지 않기(인대) <a href="https://www.youtube.com/watch?v=3P_zMPfltUk&t=145s" target="_blank">영상</a></li>
+<li>일어날 때 스키 두 개를 경사와 가로로 놓고 엉덩이 가까이 붙여서 <a href="https://www.youtube.com/watch?v=XVcwkTPJJ-o&t=166s" target="_blank">영상</a></li>
+<li>일어설 때 머리를 경사 아래쪽으로 <b>인사하듯</b> 넘기면 쉬움</li>
+<li>A자: 앞코 간격 주먹 1개, 뒤꼬리를 넓게 벌릴수록 느려짐. 무섭다고 뒤로 앉으면 안 멈춤 — 정강이를 부츠 앞에 기대기 <a href="https://www.youtube.com/watch?v=02Mk_N4CWtw&t=554s" target="_blank">영상</a></li>
+<li>폴을 찍어서는 못 멈춤. 못 멈추겠으면 한쪽으로 계속 돌아 경사 위를 보게(J턴)</li>
+</ul>
+<h3>리프트</h3>
+<ul class="pt">
+<li>탈 때 11자로 서서 뒤를 보며 깊이 앉기, 안전바 내리기. 위에서 스키 흔들지 않기(렌탈 바인딩이 헐거워 빠질 수 있음)</li>
+<li>내릴 때 11자로 서서 리프트가 밀어주는 대로 미끄러지기. 걸어 나가려 하면 넘어짐 <a href="https://www.youtube.com/watch?v=V5jVyKNPCys&t=96s" target="_blank">영상</a></li>
+<li>내리기 전에 폴이 리프트 봉 밖으로 나와 있지 않은지 확인 (걸리면 팔이 끌려감). 줄 설 때 남의 스키 밟지 않기</li>
+</ul>
+<h3>슬로프</h3>
+<ul class="pt">
+<li>초급(스패로우·펭귄)만. 야간에 초급이 닫혀도 중급은 가지 않기</li>
+<li><b>펭귄 vs 스패로우</b> (후기 3시즌 9건): 펭귄은 가깝지만 사람·강습이 몰리고 <b>하단 마지막 경사가 의외로 가파름</b>. 스패로우는 더 완만하고 길지만 멀고 보더가 많음. 펭귄이 무서우면 스패로우로</li>
+<li>쉴 때는 가장자리로. 슬로프 한가운데·리프트 내리는 곳에서 멈추지 않기</li>
+<li>다시 출발할 때 위에서 내려오는 사람 먼저 보기. 스패로우에는 다른 코스 사람이 합류하는 구간 있음</li>
+<li>사고가 가장 많은 때는 <b>도착 후 첫 1시간</b>과 지친 마지막. 탈 때는 술 마시지 않기</li>
+<li>다치면 억지로 일으키지 말고 패트롤 부르기. 부를 때 <b>코스명·가까운 위치 표시</b> 말하기. 의무실은 유스호스텔 1층</li>
+</ul>
+</div></section>
+
+<footer><p>정리 2026-11-27 · 가격·시간은 공식 안내와 최근 후기 기준</p></footer>
+</main>
+<script>
+const FOOD=[{"meals": ["17일 점심", "17일 저녁", "18일 아침", "18일 귀가 점심"], "hall": "", "n": "롯데리아 휘닉스파크점", "lat": 37.58337332417824, "lon": 128.3254752672514, "k": "22319209", "how": "단지 안", "walk": true, "menu": "세트 8,800(2월 가격)", "c": "버거", "open": "09:00–21:00", "brk": "—"}, {"meals": ["17일 저녁", "17일 야식"], "hall": "홀 O", "n": "노랑통닭 평창휘닉스점", "lat": 37.58459535785697, "lon": 128.3270456459261, "k": "220571499", "how": "걸어서 7분 · 차 2분", "walk": true, "menu": "알싸한마늘치킨 26,000×2÷4=13,000", "c": "치킨·피자", "open": "15:00–24:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "17일 야식", "18일 귀가 점심"], "hall": "", "n": "명가", "lat": 37.58483494842164, "lon": 128.32656988948216, "k": "1865671482", "how": "걸어서 7분 · 차 2분", "walk": true, "menu": "짬뽕 9,000", "c": "중식", "open": "10:00–24:00", "brk": "—"}, {"meals": ["17일 저녁", "17일 야식"], "hall": "포장·배달만", "n": "교촌치킨 휘닉스봉평점", "lat": 37.58489813319834, "lon": 128.32639893159106, "k": "1408713337", "how": "걸어서 7분 · 차 2분", "walk": true, "menu": "허니콤보 23,000×2÷4=11,500", "c": "치킨·피자", "open": "15:00–24:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 귀가 점심"], "hall": "", "n": "딥버거 △", "lat": 37.58552502294604, "lon": 128.32577154646987, "k": "88719015", "how": "걸어서 8분 · 차 2분", "walk": true, "menu": "딥버거세트 15,000", "c": "버거", "open": "11:00–19:00 · 임시휴무 기간 확인", "brk": "15:00–16:00"}, {"meals": ["17일 점심", "17일 저녁", "18일 귀가 점심"], "hall": "", "n": "세끼한식뷔페휘", "lat": 37.5856448375673, "lon": 128.32569215970196, "k": "1153717960", "how": "걸어서 8분 · 차 2분", "walk": true, "menu": "성인 한식뷔페 11,000", "c": "한식", "open": "10:00–19:00", "brk": "14:30–16:30"}, {"meals": ["17일 점심", "17일 저녁", "18일 귀가 점심"], "hall": "", "n": "평창한우다래", "lat": 37.58635146479401, "lon": 128.32373932790347, "k": "8221282", "how": "걸어서 10분 · 차 4분", "walk": true, "menu": "우거지해장국 12,000", "c": "고기", "open": "10:00–22:00", "brk": "—"}, {"meals": ["17일 저녁", "17일 야식"], "hall": "홀 O", "n": "꼬꼬가돌아왔닭 옛통", "lat": 37.586944137334875, "lon": 128.3223052244738, "k": "775576518", "how": "걸어서 12분 · 차 4분", "walk": true, "menu": "후라이드18,000+양념19,000=37,000÷4=9,250", "c": "치킨·피자", "open": "15:00–24:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 아침", "18일 귀가 점심"], "hall": "", "n": "장금이감자탕 휘닉스점", "lat": 37.58696580611797, "lon": 128.32230107932523, "k": "552981198", "how": "걸어서 12분 · 차 4분", "walk": true, "menu": "양평해장국 11,000", "c": "국밥·탕", "open": "09:00–20:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 귀가 점심"], "hall": "", "n": "솥뚜껑삼겹도령과 낙지낭자", "lat": 37.58696682066174, "lon": 128.32221052665827, "k": "21342353", "how": "걸어서 12분 · 차 4분", "walk": true, "menu": "제육볶음12,000+공기밥1,000=13,000", "c": "고기", "open": "10:00–23:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 아침", "18일 귀가 점심"], "hall": "", "n": "광명식당", "lat": 37.586999247743954, "lon": 128.32221110034484, "k": "9973009", "how": "걸어서 12분 · 차 4분", "walk": true, "menu": "황태해장국 10,000", "c": "한식", "open": "08:00–22:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 귀가 점심"], "hall": "", "n": "휘팍샤브샤브", "lat": 37.587180156967854, "lon": 128.32182484615788, "k": "956798713", "how": "걸어서 13분 · 차 2분", "walk": true, "menu": "소고기샤브 14,900", "c": "한식", "open": "11:00–22:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "17일 야식", "18일 귀가 점심"], "hall": "", "n": "일미리금계찜닭 휘닉스파크점", "lat": 37.5877084274952, "lon": 128.32163493221557, "k": "1456414587", "how": "걸어서 14분 · 차 2분", "walk": true, "menu": "순살금계찜닭 대47,000+밥1,000×4=51,000÷4=12,750", "c": "한식", "open": "11:00–23:30", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "17일 야식", "18일 귀가 점심"], "hall": "", "n": "태영생막창 봉평점", "lat": 37.58804035718258, "lon": 128.32127851451773, "k": "11553280", "how": "걸어서 15분 · 차 2분", "walk": true, "menu": "돼지막창14,000+공기밥1,000=15,000", "c": "고기", "open": "10:00–24:00", "brk": "—"}, {"meals": ["17일 저녁", "17일 야식"], "hall": "홀 O", "n": "치킨매니아 한화리조트평창점", "lat": 37.579055049302184, "lon": 128.33100895173115, "k": "22043473", "how": "걸어서 14분 · 차 5분", "walk": true, "menu": "마일드후라이드22,000×2÷4=11,000", "c": "치킨·피자", "open": "15:30–23:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 귀가 점심"], "hall": "", "n": "묵사발", "lat": 37.58832201957616, "lon": 128.3196169643817, "k": "9006960", "how": "차 2분", "walk": false, "menu": "메밀물막국수 9,000", "c": "면·막국수", "open": "10:00–20:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "17일 야식", "18일 아침", "18일 귀가 점심"], "hall": "", "n": "정가네맛집", "lat": 37.589335662414264, "lon": 128.321138383674, "k": "44622780", "how": "차 2분", "walk": false, "menu": "황태해장국 13,000", "c": "한식", "open": "06:00–24:00", "brk": "14:00–15:00"}, {"meals": ["17일 저녁", "17일 야식"], "hall": "홀 O", "n": "네네치킨 봉평점", "lat": 37.58965387562787, "lon": 128.3200752374161, "k": "16627595", "how": "차 2분", "walk": false, "menu": "후라이드22,000×2÷4=11,000", "c": "치킨·피자", "open": "15:00–24:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 귀가 점심"], "hall": "", "n": "무이806능이백숙", "lat": 37.5905458788733, "lon": 128.31926223366665, "k": "1988763283", "how": "차 3분", "walk": false, "menu": "누룽지통닭22,000×2÷4=11,000", "c": "한식", "open": "11:00–22:00", "brk": "—"}, {"meals": ["17일 저녁"], "hall": "포장·배달만", "n": "오구피자 평창휘닉스점", "lat": 37.57993579825684, "lon": 128.33662136375668, "k": "165925435", "how": "차 2분", "walk": false, "menu": "콤비네이션 L12,900×2÷4=6,450", "c": "치킨·피자", "open": "15:00–22:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 아침", "18일 귀가 점심"], "hall": "", "n": "삼성우렁촌", "lat": 37.591857289921364, "lon": 128.31993753791306, "k": "10419838", "how": "차 2분", "walk": false, "menu": "우렁쌈밥정식 14,000(2인 이상)", "c": "한식", "open": "09:00–20:30", "brk": "15:30–17:00"}, {"meals": ["17일 점심", "17일 저녁", "18일 아침", "18일 귀가 점심"], "hall": "", "n": "미락식당", "lat": 37.59225017308549, "lon": 128.31831861987365, "k": "17604794", "how": "차 3분", "walk": false, "menu": "청국장 또는 얼큰순두부 10,000", "c": "한식", "open": "09:00–21:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 귀가 점심"], "hall": "", "n": "태양반점", "lat": 37.59230193032763, "lon": 128.318201782759, "k": "15295347", "how": "차 3분", "walk": false, "menu": "짬뽕 또는 볶음밥 9,000", "c": "중식", "open": "10:00–21:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 아침", "18일 귀가 점심"], "hall": "", "n": "뜰안채", "lat": 37.59231765733815, "lon": 128.31808430991683, "k": "9752357", "how": "차 3분", "walk": false, "menu": "보리밥 또는 바지락칼국수 10,000", "c": "한식", "open": "08:00–20:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 귀가 점심"], "hall": "", "n": "안선생", "lat": 37.59153239665131, "lon": 128.31676163230233, "k": "570393842", "how": "차 3분", "walk": false, "menu": "황태국밥 10,000", "c": "한식", "open": "10:00–20:00", "brk": "—"}, {"meals": ["17일 저녁", "17일 야식"], "hall": "홀 모름", "n": "처갓집양념치킨 휘닉스파크점", "lat": 37.59243056441825, "lon": 128.3179776088377, "k": "1108363016", "how": "차 3분", "walk": false, "menu": "후라이드21,000×2÷4=10,500", "c": "치킨·피자", "open": "15:00–24:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 아침", "18일 귀가 점심"], "hall": "", "n": "병천청년순대 휘닉스파크점", "lat": 37.57824296574391, "lon": 128.33813061561173, "k": "1895041086", "how": "차 3분", "walk": false, "menu": "순대국 N9,000·K10,000; 밥1,000 추가해도 최대11,000", "c": "국밥·탕", "open": "07:00–20:00", "brk": "—"}, {"meals": ["17일 저녁", "17일 야식", "18일 귀가 점심"], "hall": "포장·배달만", "n": "BHC치킨 봉평휘닉스점", "lat": 37.59276650418336, "lon": 128.31790654329203, "k": "1976082331", "how": "차 3분", "walk": false, "menu": "뿌링클21,000×2÷4=10,500", "c": "치킨·피자", "open": "14:30–23:30", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 귀가 점심"], "hall": "", "n": "호승반점", "lat": 37.59327045389597, "lon": 128.31892537991573, "k": "176696908", "how": "차 3분", "walk": false, "menu": "유니짜장 8,000 / 짬뽕 10,000", "c": "중식", "open": "11:00–20:00", "brk": "평일 시간 미확인(N주말 없음)"}, {"meals": ["17일 점심", "17일 저녁", "18일 아침", "18일 귀가 점심"], "hall": "", "n": "소한마리국밥", "lat": 37.59294949925579, "lon": 128.31797770434756, "k": "14714370", "how": "차 3분", "walk": false, "menu": "한우시래기국밥 N12,000·K13,000 →13,000", "c": "국밥·탕", "open": "08:30–21:00", "brk": "14:00–16:30"}, {"meals": ["17일 점심", "17일 저녁"], "hall": "", "n": "덕고식당", "lat": 37.59323186132327, "lon": 128.31818648596374, "k": "13620901", "how": "차 3분", "walk": false, "menu": "황태칼국수 9,000", "c": "한식", "open": "11:00–22:00", "brk": "13:00–17:00"}, {"meals": ["17일 점심", "17일 저녁", "17일 야식", "18일 귀가 점심"], "hall": "", "n": "기분좋은날", "lat": 37.59313667741854, "lon": 128.31735148786203, "k": "1013608566", "how": "차 3분", "walk": false, "menu": "얼큰샤브샤브 14,000", "c": "고기", "open": "11:30–23:00", "brk": "15:00–17:00"}, {"meals": ["17일 저녁", "17일 야식"], "hall": "홀 모름", "n": "BBQ 평창휘닉스파크점", "lat": 37.592903849025525, "lon": 128.31625591970354, "k": "1475386403", "how": "차 4분", "walk": false, "menu": "황금올리브치킨23,000×2÷4=11,500", "c": "치킨·피자", "open": "17:30–23:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "17일 야식", "18일 귀가 점심"], "hall": "", "n": "탑포차", "lat": 37.59443506459938, "lon": 128.31822582910783, "k": "44511953", "how": "차 4분", "walk": false, "menu": "떡만둣국 8,000", "c": "술집", "open": "10:00–익일 02:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 귀가 점심"], "hall": "", "n": "인생맛집", "lat": 37.59552080109626, "lon": 128.32071331799023, "k": "42771499", "how": "차 3분", "walk": false, "menu": "인생백반 9,000", "c": "한식", "open": "11:00–20:30", "brk": "15:00–17:00"}, {"meals": ["18일 아침", "18일 귀가 점심"], "hall": "", "n": "산채랑황태랑", "lat": 37.575319741615445, "lon": 128.33945475299842, "k": "9802833", "how": "차 3분", "walk": false, "menu": "황태해장국 10,000", "c": "국밥·탕", "open": "08:30–19:30", "brk": "—"}, {"meals": ["17일 저녁", "17일 야식"], "hall": "홀 O", "n": "자연임실치즈피자 봉평점", "lat": 37.59546844621887, "lon": 128.31765981429606, "k": "2114918112", "how": "차 4분", "walk": false, "menu": "콤비네이션 L24,900×2÷4=12,450", "c": "치킨·피자", "open": "16:00–23:30", "brk": "—"}, {"meals": ["17일 저녁"], "hall": "", "n": "1997동굴갈비", "lat": 37.57528496222856, "lon": 128.34029630342891, "k": "2085727501", "how": "차 10분", "walk": false, "menu": "한우국밥 11,000", "c": "고기", "open": "16:00–21:30", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 귀가 점심"], "hall": "", "n": "양푼이우거지동태탕 휘닉스점", "lat": 37.57466256489374, "lon": 128.33988670211588, "k": "1956831936", "how": "차 3분", "walk": false, "menu": "동태탕8,000+공기밥1,000=9,000", "c": "국밥·탕", "open": "08:00–19:30", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 아침", "18일 귀가 점심"], "hall": "", "n": "향수식당", "lat": 37.57443981004322, "lon": 128.34077920741908, "k": "815089023", "how": "차 3분", "walk": false, "menu": "뼈해장국 12,000", "c": "한식", "open": "09:00–20:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 아침", "18일 귀가 점심"], "hall": "", "n": "전주식당", "lat": 37.573605976657284, "lon": 128.34090008681451, "k": "25505985", "how": "차 3분", "walk": false, "menu": "황태해장국 13,000 / 김치찌개12,000", "c": "한식", "open": "06:00–21:00", "brk": "—"}, {"meals": ["17일 저녁"], "hall": "", "n": "코지화로구이", "lat": 37.56704196661729, "lon": 128.3480034574562, "k": "283132024", "how": "차 5분", "walk": false, "menu": "갈비탕 12,000 / 곤드레밥10,000", "c": "고기", "open": "16:00–21:00", "brk": "—"}, {"meals": ["17일 점심", "18일 귀가 점심"], "hall": "", "n": "김가네손만두국", "lat": 37.56432259540573, "lon": 128.34882365945617, "k": "21446788", "how": "차 5분", "walk": false, "menu": "손만두국 10,000", "c": "한식", "open": "10:00–14:00", "brk": "—"}, {"meals": ["17일 저녁", "17일 야식"], "hall": "", "n": "퓨전선술집", "lat": 37.564195870320304, "lon": 128.34887569989212, "k": "1162681556", "how": "차 5분", "walk": false, "menu": "후라이드20,000×2÷4=10,000", "c": "술집", "open": "17:30–익일 02:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 아침", "18일 귀가 점심"], "hall": "", "n": "송원해장국막국수", "lat": 37.56382788243226, "lon": 128.34922670597547, "k": "17717015", "how": "차 6분", "walk": false, "menu": "황태해장국 12,000", "c": "국밥·탕", "open": "07:00–19:00", "brk": "15:00–16:30"}, {"meals": ["17일 점심", "18일 아침", "18일 귀가 점심"], "hall": "", "n": "면온식당", "lat": 37.56405997715637, "lon": 128.3557046863225, "k": "1590126295", "how": "차 6분", "walk": false, "menu": "황태해장국·육개장·해물순두부 각12,000", "c": "한식", "open": "07:00–15:00", "brk": "—"}, {"meals": ["17일 점심", "18일 귀가 점심"], "hall": "", "n": "메밀꽃필무렵", "lat": 37.61094194720876, "lon": 128.3602880976725, "k": "12095115", "how": "차 9분", "walk": false, "menu": "메밀물국수 12,000", "c": "한식", "open": "09:30–16:30", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 아침", "18일 귀가 점심"], "hall": "", "n": "황태명가", "lat": 37.611201405559115, "lon": 128.3690130370673, "k": "10047418", "how": "차 10분", "walk": false, "menu": "황태해장국 12,000", "c": "국밥·탕", "open": "09:00–21:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 귀가 점심"], "hall": "", "n": "원미식당", "lat": 37.61234880845645, "lon": 128.3682684961196, "k": "9326610", "how": "차 10분", "walk": false, "menu": "메밀막국수 9,000", "c": "면·막국수", "open": "10:30–20:00", "brk": "없음(B2026-10-09)"}, {"meals": ["17일 저녁", "17일 야식", "18일 귀가 점심"], "hall": "홀 O", "n": "자담치킨 강원봉평점", "lat": 37.62297953906901, "lon": 128.35108359660651, "k": "1854315610", "how": "차 9분", "walk": false, "menu": "후라이드21,000×2÷4=10,500", "c": "치킨·피자", "open": "13:00–23:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 귀가 점심"], "hall": "", "n": "동이네막국수", "lat": 37.61278484818535, "lon": 128.37168310239625, "k": "11359213", "how": "차 10분", "walk": false, "menu": "왕갈비탕 15,000 / 메밀묵사발11,000", "c": "면·막국수", "open": "11:00–20:00", "brk": "—"}, {"meals": ["17일 점심", "17일 저녁", "18일 귀가 점심"], "hall": "", "n": "황금코다리 평창봉평점", "lat": 37.61475881669177, "lon": 128.37237624584108, "k": "1329462073", "how": "차 10분", "walk": false, "menu": "코다리조림 대(4인)56,000+밥1,000×4=60,000÷4=15,000", "c": "국밥·탕", "open": "11:00–21:00", "brk": "15:00–17:00"}];
+(function(){
+const MEALS=['all','17일 점심','17일 저녁','17일 야식','18일 아침','18일 귀가 점심'];let meal='all',mode='near',cat='all';const okc=c=>cat==='all'||c===cat;
+const list=document.getElementById('flist'),img=document.getElementById('fimg');
+FOOD.forEach((f,i)=>{f.no=i+1;const li=document.createElement('li');
+ li.innerHTML='<span class="n" style="background:'+(f.walk?'#c2410c':'#64748b')+'">'+f.no+'</span><span><b>'+f.n+'</b><small>'+f.c+' · '+f.how+' · '+f.menu+'<br>영업 '+f.open+(f.brk&&f.brk!='—'?' · 쉬는 시간 '+f.brk:'')+(f.hall?' · '+f.hall:'')+'</small></span>';
+ li.onclick=()=>window.open('https://place.map.kakao.com/'+f.k,'_blank');f.li=li;list.appendChild(li)});
+function draw(){img.src='ev/nmap/food-'+mode+'-'+MEALS.indexOf(meal)+'.png';FOOD.forEach(f=>f.li.style.display=((meal==='all'||f.meals.includes(meal))&&okc(f.c))?'':'none');const rows=[...document.querySelectorAll('#ftab tbody tr')].filter(tr=>(meal==='all'||tr.dataset.m.split('|').includes(meal))&&okc(tr.dataset.c));const lim=open_?rows.length:Math.ceil(rows.length/2);document.querySelectorAll('#ftab tbody tr').forEach(tr=>tr.style.display='none');rows.forEach((tr,i)=>{if(i<lim)tr.style.display=''});const mb=document.getElementById('fmore');if(mb){mb.style.display=rows.length>lim||open_?'':'none';mb.textContent=open_?'접기':'더보기 ('+(rows.length-lim)+'곳 더)'}}
+let open_=false;
+document.getElementById('mf').onclick=e=>{const b=e.target.closest('button');if(!b)return;document.querySelectorAll('#mf button').forEach(x=>x.classList.toggle('on',x===b));meal=b.dataset.m;draw()};
+document.getElementById('cf').onclick=e=>{const b=e.target.closest('button');if(!b)return;document.querySelectorAll('#cf button').forEach(x=>x.classList.toggle('on',x===b));cat=b.dataset.c;open_=false;draw()};
+document.getElementById('mv').onclick=e=>{const b=e.target.closest('button');if(!b)return;document.querySelectorAll('#mv button').forEach(x=>x.classList.toggle('on',x===b));mode=b.dataset.v;draw()};
+document.getElementById('fmore').onclick=()=>{open_=!open_;draw();if(!open_)document.getElementById('ftab').scrollIntoView({block:'start'})};
+draw();
+const K='phoenix-pack-v1';let st={};try{st=JSON.parse(localStorage.getItem(K)||'{}')}catch(e){}
+document.querySelectorAll('.ck li').forEach((li,i)=>{if(st[i])li.classList.add('on');li.onclick=()=>{li.classList.toggle('on');st[i]=li.classList.contains('on');try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}}});
+})();
+
+(function(){const now=new Date();let st={};try{st=JSON.parse(localStorage.getItem('phoenix-fold-v1')||'{}')}catch(e){}
+document.querySelectorAll('.step[data-until]').forEach(s=>{const bar=document.createElement('div');bar.className='pastbar';bar.textContent='지난 일정이라 접어 둠 — 누르면 펼치기';s.appendChild(bar);
+ const auto=now>=new Date(s.dataset.until+':00+09:00');const fold=(s.id in st)?st[s.id]:auto;if(fold)s.classList.add('past');
+ const tog=()=>{s.classList.toggle('past');st[s.id]=s.classList.contains('past');try{localStorage.setItem('phoenix-fold-v1',JSON.stringify(st))}catch(e){}};
+ bar.onclick=tog;s.querySelector('.t').onclick=tog;});
+document.querySelectorAll('.toc a').forEach(a=>a.addEventListener('click',()=>{const s=document.querySelector(a.getAttribute('href'));if(s&&s.classList.contains('past'))s.classList.remove('past')}));})();
+
+document.querySelectorAll('.tw table').forEach(tb=>{const hs=[...tb.querySelectorAll('thead th')].map(h=>h.innerText.trim());if(!hs.length)return;tb.querySelectorAll('tbody tr').forEach(tr=>[...tr.children].forEach((td,i)=>{if(hs[i])td.setAttribute('data-l',hs[i])}))});
+
+(function(){const links=[...document.querySelectorAll('.toc a')];const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+function upd(){let k=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)k=i});links.forEach((a,i)=>a.classList.toggle('cur',i===k));const c=links[k],n=c.parentElement;if(n.scrollWidth>n.clientWidth){const x=c.offsetLeft-n.clientWidth/2+c.offsetWidth/2;if(Math.abs(n.scrollLeft-x)>40)n.scrollTo({left:x,behavior:'smooth'})}}
+addEventListener('scroll',()=>requestAnimationFrame(upd),{passive:true});upd();})();
+</script></body></html>
