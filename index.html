@@ -139,6 +139,8 @@ details.fold.big{border:2px solid #0f2a4a;background:#f3f6fa;margin:14px 0}detai
 .facmap{position:relative;max-width:720px;margin:12px 0 6px}.facmap img{width:100%;display:block;border:1px solid #ddd}.facmap .fp{position:absolute;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;border:0;background:transparent;cursor:pointer;font-size:0}.facmap .fp:focus-visible{outline:3px solid #c2410c}
 .faccards{max-width:720px;border-top:2px solid var(--ink)}.fc{border-bottom:1px solid #e5e7eb}.fc>summary{list-style:none;display:grid;grid-template-columns:36px 1fr auto;gap:12px;align-items:center;padding:12px 0;cursor:pointer}.fc>summary::-webkit-details-marker{display:none}.fc>summary::after{content:"+";font-size:22px;color:#55657a}.fc[open]>summary::after{content:"−"}.fc>summary i{width:32px;height:32px;border-radius:50%;color:#fff;font-style:normal;font-weight:800;display:grid;place-items:center}.fc>summary b{display:block;font-size:17px;color:var(--ink)}.fc>summary small{display:block;font-size:14px;color:#55657a}.fc ul{list-style:none;margin:0 0 12px 48px;padding:0}.fc li{display:grid;grid-template-columns:40px 1fr;padding:4px 0;font-size:15px}.fc li b{color:#0f2a4a}.fc.hit{background:#fff6cc}
 .tldr{border:3px solid var(--ink);padding:14px 16px 10px;margin:10px 0 16px;background:#fff}.tldr .k{display:inline-block;background:var(--ink);color:#fff;padding:3px 10px;font-size:15px;margin-bottom:6px}.tldr ol{margin:6px 0 8px;padding-left:22px}.tldr li{margin:6px 0;font-size:16.5px;line-height:1.55}.tldr p{margin:6px 0 0;font-size:15.5px;border-top:1px solid #ddd;padding-top:8px}
+.lg2{display:flex;flex-wrap:wrap;gap:8px 18px;margin:8px 0 12px;padding:10px 12px;background:#f3f6fa;font-size:15px}.lg2 span{display:flex;align-items:center;gap:7px}.lg2 i{width:16px;height:16px;display:inline-block}.lg2 .bm{border:2.5px solid #b91c1c}.lg2 .bo{border:1.5px dashed #888}.lg2 .bd{background:#1f9d3a;position:relative}.lg2 .bd::after{content:"";position:absolute;left:5px;top:2px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.ck li.must{font-weight:700;color:var(--ink)}.ck li.must::before{border:2.5px solid #b91c1c}.ck li.sep{cursor:default;padding-left:0;border-bottom:0;font-size:13px;color:#888;padding:10px 0 2px;border-top:1px dashed #ccc;margin-top:6px;font-weight:600}.ck li.sep::before,.ck li.sep::after{display:none}
 </style>
 </head><body><main>
 <div class="top"><span>PHOENIX PARK · 12.17–18</span></div>
@@ -164,16 +166,12 @@ details.fold.big{border:2px solid #0f2a4a;background:#f3f6fa;margin:14px 0}detai
 
 <section class="step" id="p" data-until="2026-12-17T06:00"><div class="t"><b>준비물</b><span>각자</span></div><div>
 <div class="wx"><b>날씨 예보 · 봉평</b> <small>12/2쯤부터 예보가 나오면 자동으로 채워짐</small></div>
-<p class="lg"><span class="must">필수</span> 꼭 챙기기 · <span class="opt">선택</span> 있으면 좋음 · 누르면 체크</p>
+<div class="lg2"><span><i class="bm"></i><b>꼭 챙기기</b></span><span><i class="bo"></i>있으면 좋음</span><span><i class="bd"></i>누르면 체크 (폰에 저장)</span></div>
 <div class="ck">
-<div><h4>스키</h4><ul>
-<li class="must">방수 장갑</li><li class="must">이너 상하 — 면 말고 기능성·히트텍</li><li class="must">긴 양말 2켤레 — 정강이 덮고 무릎 아래까지 (부츠보다 높게)</li><li class="must">스키복 — 야간 2명만</li><li class="opt">넥워머</li><li class="opt">보온층 (플리스)</li><li class="opt">선크림 · 립밤</li></ul></div>
-<div><h4>블루캐니언</h4><ul>
-<li class="must">수영복</li><li class="opt">캡 모자</li><li class="must">비닐봉지 (젖은 옷)</li></ul></div>
-<div><h4>지갑 · 폰</h4><ul>
-<li class="must">신분증</li><li class="must">휴대전화</li><li class="opt">보조배터리 · 충전기</li></ul></div>
-<div><h4>숙소 · 귀가</h4><ul>
-<li class="must">칫솔 · 치약</li><li class="must">여벌 속옷 2벌</li><li class="must">갈아입을 옷 (잘 때 · 귀가)</li><li class="opt">스킨 · 로션</li><li class="opt">편한 신발</li><li class="opt">물티슈</li></ul></div>
+<div><h4>스키</h4><ul><li class="must">방수 장갑</li><li class="must">이너 상하 — 면 말고 기능성·히트텍</li><li class="must">긴 양말 2켤레 — 정강이 덮고 무릎 아래까지 (부츠보다 높게)</li><li class="must">스키복 — 야간 2명만</li><li class="sep">있으면 좋음</li><li class="opt">넥워머</li><li class="opt">보온층 (플리스)</li><li class="opt">선크림 · 립밤</li></ul></div>
+<div><h4>블루캐니언</h4><ul><li class="must">수영복</li><li class="must">비닐봉지 (젖은 옷)</li><li class="sep">있으면 좋음</li><li class="opt">캡 모자</li></ul></div>
+<div><h4>지갑 · 폰</h4><ul><li class="must">신분증</li><li class="must">휴대전화</li><li class="sep">있으면 좋음</li><li class="opt">보조배터리 · 충전기</li></ul></div>
+<div><h4>숙소 · 귀가</h4><ul><li class="must">칫솔 · 치약</li><li class="must">여벌 속옷 2벌</li><li class="must">갈아입을 옷 (잘 때 · 귀가)</li><li class="sep">있으면 좋음</li><li class="opt">스킨 · 로션</li><li class="opt">편한 신발</li><li class="opt">물티슈</li></ul></div>
 </div>
 <p class="note">안 챙겨도 됨: 샴푸 · 드라이기 (객실에 있음). 객실 수건은 1인 1개</p>
 <h3>전날 장보기 (공용)</h3>
@@ -495,7 +493,7 @@ document.getElementById('mv').onclick=e=>{const b=e.target.closest('button');if(
 document.getElementById('fmore').onclick=()=>{open_=!open_;draw();if(!open_)document.getElementById('ftab').scrollIntoView({block:'start'})};
 draw();
 const K='phoenix-pack-v1';let st={};try{st=JSON.parse(localStorage.getItem(K)||'{}')}catch(e){}
-document.querySelectorAll('.ck li').forEach((li,i)=>{if(st[i])li.classList.add('on');li.onclick=()=>{li.classList.toggle('on');st[i]=li.classList.contains('on');try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}}});
+document.querySelectorAll('.ck li:not(.sep)').forEach((li,i)=>{if(st[i])li.classList.add('on');li.onclick=()=>{li.classList.toggle('on');st[i]=li.classList.contains('on');try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}}});
 })();
 
 (function(){const now=new Date();let st={};try{st=JSON.parse(localStorage.getItem('phoenix-fold-v1')||'{}')}catch(e){}
